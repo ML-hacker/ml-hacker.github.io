@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bypass on Delete&#39;s blog</title>
+    <link>https://example.org/tags/bypass/</link>
+    <description>Recent content in Bypass on Delete&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Sun, 14 Apr 2024 14:34:26 +0800</lastBuildDate><atom:link href="https://example.org/tags/bypass/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Open_basedir绕过</title>
+      <link>https://example.org/posts/open_basedir%E7%BB%95%E8%BF%87%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate>
+      
+      <guid>https://example.org/posts/open_basedir%E7%BB%95%E8%BF%87%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

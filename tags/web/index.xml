@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WEB on Delete&#39;s blog</title>
+    <link>https://example.org/tags/web/</link>
+    <description>Recent content in WEB on Delete&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Thu, 15 May 2025 19:33:17 +0800</lastBuildDate><atom:link href="https://example.org/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>N1junior2025</title>
+      <link>https://example.org/posts/n1junior2025/</link>
+      <pubDate>Thu, 15 May 2025 19:33:17 +0800</pubDate>
+      
+      <guid>https://example.org/posts/n1junior2025/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DCSync Learning</title>
+      <link>https://example.org/posts/dcsync-learning/</link>
+      <pubDate>Thu, 20 Mar 2025 16:41:40 +0800</pubDate>
+      
+      <guid>https://example.org/posts/dcsync-learning/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>云镜-Initial</title>
+      <link>https://example.org/posts/initial/</link>
+      <pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate>
+      
+      <guid>https://example.org/posts/initial/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>TRX-CTF2025 复现</title>
+      <link>https://example.org/posts/trx-ctf-writeups/</link>
+      <pubDate>Mon, 10 Mar 2025 10:49:20 +0800</pubDate>
+      
+      <guid>https://example.org/posts/trx-ctf-writeups/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>filter中发生的leak</title>
+      <link>https://example.org/posts/filterleak/</link>
+      <pubDate>Thu, 25 Jul 2024 21:25:26 +0800</pubDate>
+      
+      <guid>https://example.org/posts/filterleak/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

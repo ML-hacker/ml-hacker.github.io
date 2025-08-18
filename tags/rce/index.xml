@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RCE on Delete&#39;s blog</title>
+    <link>https://example.org/tags/rce/</link>
+    <description>Recent content in RCE on Delete&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Sun, 14 Apr 2024 14:34:26 +0800</lastBuildDate><atom:link href="https://example.org/tags/rce/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Filter Chain learning</title>
+      <link>https://example.org/posts/filter-chain-learning/</link>
+      <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate>
+      
+      <guid>https://example.org/posts/filter-chain-learning/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
