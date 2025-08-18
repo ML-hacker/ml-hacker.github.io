@@ -1,1 +1,323 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Delete's blog</title><link>https://example.org/</link><description>Recent content on Delete's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Test</title><link>https://example.org/posts/1755498211534-test/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://example.org/posts/1755498211534-test/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/posts/1755498211534-test/featured.png"/></item><item><title>Midnight Sun CTF 2025 WEB</title><link>https://example.org/posts/midnight-sun-ctf-2025-web/</link><pubDate>Thu, 22 May 2025 00:36:52 +0800</pubDate><guid>https://example.org/posts/midnight-sun-ctf-2025-web/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/posts/midnight-sun-ctf-2025-web/featured.png"/></item><item><title>Classloader Learning</title><link>https://example.org/posts/classloader-learning/</link><pubDate>Fri, 16 May 2025 12:09:35 +0800</pubDate><guid>https://example.org/posts/classloader-learning/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/posts/classloader-learning/featured.jpg"/></item><item><title>关于2025年全国大学生计算机系统能力大赛-操作系统设计赛(全国)</title><link>https://example.org/posts/os/</link><pubDate>Thu, 15 May 2025 20:33:17 +0800</pubDate><guid>https://example.org/posts/os/</guid><description/></item><item><title>N1junior2025</title><link>https://example.org/posts/n1junior2025/</link><pubDate>Thu, 15 May 2025 19:33:17 +0800</pubDate><guid>https://example.org/posts/n1junior2025/</guid><description/></item><item><title>Pydash原型链污染链子分析</title><link>https://example.org/posts/pydash%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93%E9%93%BE%E5%AD%90%E5%88%86%E6%9E%90/</link><pubDate>Tue, 25 Mar 2025 13:50:22 +0800</pubDate><guid>https://example.org/posts/pydash%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93%E9%93%BE%E5%AD%90%E5%88%86%E6%9E%90/</guid><description>&lt;p>首发于奇安信攻防论坛：https://forum.butian.net/share/4251&lt;/p></description></item><item><title>DCSync Learning</title><link>https://example.org/posts/dcsync-learning/</link><pubDate>Thu, 20 Mar 2025 16:41:40 +0800</pubDate><guid>https://example.org/posts/dcsync-learning/</guid><description/></item><item><title>云镜-Initial</title><link>https://example.org/posts/initial/</link><pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate><guid>https://example.org/posts/initial/</guid><description/></item><item><title>TRX-CTF2025 复现</title><link>https://example.org/posts/trx-ctf-writeups/</link><pubDate>Mon, 10 Mar 2025 10:49:20 +0800</pubDate><guid>https://example.org/posts/trx-ctf-writeups/</guid><description/></item><item><title>filter中发生的leak</title><link>https://example.org/posts/filterleak/</link><pubDate>Thu, 25 Jul 2024 21:25:26 +0800</pubDate><guid>https://example.org/posts/filterleak/</guid><description/></item><item><title>HITCON CTF 2024 web复现</title><link>https://example.org/posts/hitcon2024/</link><pubDate>Mon, 22 Jul 2024 00:26:26 +0800</pubDate><guid>https://example.org/posts/hitcon2024/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/posts/hitcon2024/featured.png"/></item><item><title>基本ROP</title><link>https://example.org/posts/baserop/</link><pubDate>Fri, 12 Jul 2024 14:38:20 +0800</pubDate><guid>https://example.org/posts/baserop/</guid><description/></item><item><title>Python Prototype chains pollution</title><link>https://example.org/posts/python-prototype-chain-pollution/</link><pubDate>Thu, 11 Jul 2024 21:55:20 +0800</pubDate><guid>https://example.org/posts/python-prototype-chain-pollution/</guid><description/></item><item><title>Node JS Prototype chain pollution</title><link>https://example.org/posts/node-js-prototype-chain-pollution/</link><pubDate>Sun, 07 Jul 2024 22:55:20 +0800</pubDate><guid>https://example.org/posts/node-js-prototype-chain-pollution/</guid><description/></item><item><title>Filter Chain learning</title><link>https://example.org/posts/filter-chain-learning/</link><pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><guid>https://example.org/posts/filter-chain-learning/</guid><description/></item><item><title>Open_basedir绕过</title><link>https://example.org/posts/open_basedir%E7%BB%95%E8%BF%87%E5%AD%A6%E4%B9%A0/</link><pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><guid>https://example.org/posts/open_basedir%E7%BB%95%E8%BF%87%E5%AD%A6%E4%B9%A0/</guid><description/></item><item><title>浅谈BashFuck</title><link>https://example.org/posts/%E6%B5%85%E8%B0%88bashfuck/</link><pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><guid>https://example.org/posts/%E6%B5%85%E8%B0%88bashfuck/</guid><description/></item><item><title>深入浅出-Hash长度拓展攻击</title><link>https://example.org/posts/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-hash%E9%95%BF%E5%BA%A6%E6%8B%93%E5%B1%95%E6%94%BB%E5%87%BB/</link><pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><guid>https://example.org/posts/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-hash%E9%95%BF%E5%BA%A6%E6%8B%93%E5%B1%95%E6%94%BB%E5%87%BB/</guid><description/></item><item><title>LD_PRELOAD学习</title><link>https://example.org/posts/ld_preload/</link><pubDate>Wed, 21 Feb 2024 20:53:41 +0800</pubDate><guid>https://example.org/posts/ld_preload/</guid><description/></item><item><title>nosql-inject(mangodb and influxdb)</title><link>https://example.org/posts/nosql-inject/</link><pubDate>Thu, 01 Feb 2024 23:27:59 +0800</pubDate><guid>https://example.org/posts/nosql-inject/</guid><description/></item><item><title>CTFshow元旦水友赛部分wp-web</title><link>https://example.org/posts/ctfshow-yuandan/</link><pubDate>Thu, 25 Jan 2024 22:14:21 +0800</pubDate><guid>https://example.org/posts/ctfshow-yuandan/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/posts/ctfshow-yuandan/featured.png"/></item><item><title>Knightctf 2024 WP</title><link>https://example.org/posts/knightctf-2024/</link><pubDate>Mon, 22 Jan 2024 17:38:41 +0800</pubDate><guid>https://example.org/posts/knightctf-2024/</guid><description/></item><item><title>反序列化-phar</title><link>https://example.org/posts/phar/</link><pubDate>Wed, 17 Jan 2024 18:32:32 +0800</pubDate><guid>https://example.org/posts/phar/</guid><description/></item><item><title>n1ctf-ezmaira</title><link>https://example.org/posts/n1ctf-ezmaira/</link><pubDate>Fri, 03 Nov 2023 13:19:58 +0800</pubDate><guid>https://example.org/posts/n1ctf-ezmaira/</guid><description/></item><item><title>ACTF2023 WP</title><link>https://example.org/posts/actf/</link><pubDate>Tue, 31 Oct 2023 14:34:26 +0800</pubDate><guid>https://example.org/posts/actf/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/posts/actf/featured.png"/></item><item><title>PHP中非法参数名问题分析</title><link>https://example.org/posts/php-parameter/</link><pubDate>Fri, 27 Oct 2023 16:59:24 +0800</pubDate><guid>https://example.org/posts/php-parameter/</guid><description/></item><item><title>天山固网线上赛WP</title><link>https://example.org/posts/%E5%A4%A9%E5%B1%B1/</link><pubDate>Sat, 21 Oct 2023 21:55:20 +0800</pubDate><guid>https://example.org/posts/%E5%A4%A9%E5%B1%B1/</guid><description/></item><item><title>udf导出表</title><link>https://example.org/posts/lolita-n1/</link><pubDate>Wed, 13 Sep 2023 16:28:55 +0800</pubDate><guid>https://example.org/posts/lolita-n1/</guid><description/></item><item><title>从XSS到 RCE (dompdf 0day)</title><link>https://example.org/posts/rce-pdf/</link><pubDate>Wed, 13 Sep 2023 10:51:49 +0800</pubDate><guid>https://example.org/posts/rce-pdf/</guid><description/></item><item><title>SICTFround2 wp</title><link>https://example.org/posts/sictf/</link><pubDate>Mon, 06 Feb 2023 14:36:17 +0800</pubDate><guid>https://example.org/posts/sictf/</guid><description/></item><item><title>ABOUT MEEE</title><link>https://example.org/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/about/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Delete&#39;s blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Delete&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/posts/1755498211534-test/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/1755498211534-test/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/1755498211534-test/featured.png" />
+    </item>
+    
+    <item>
+      <title>Midnight Sun CTF 2025 WEB</title>
+      <link>http://localhost:1313/posts/midnight-sun-ctf-2025-web/</link>
+      <pubDate>Thu, 22 May 2025 00:36:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/midnight-sun-ctf-2025-web/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/midnight-sun-ctf-2025-web/featured.png" />
+    </item>
+    
+    <item>
+      <title>Classloader Learning</title>
+      <link>http://localhost:1313/posts/classloader-learning/</link>
+      <pubDate>Fri, 16 May 2025 12:09:35 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/classloader-learning/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/classloader-learning/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>关于2025年全国大学生计算机系统能力大赛-操作系统设计赛(全国)</title>
+      <link>http://localhost:1313/posts/os/</link>
+      <pubDate>Thu, 15 May 2025 20:33:17 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/os/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>N1junior2025</title>
+      <link>http://localhost:1313/posts/n1junior2025/</link>
+      <pubDate>Thu, 15 May 2025 19:33:17 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/n1junior2025/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Pydash原型链污染链子分析</title>
+      <link>http://localhost:1313/posts/pydash%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93%E9%93%BE%E5%AD%90%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 25 Mar 2025 13:50:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/pydash%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93%E9%93%BE%E5%AD%90%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;首发于奇安信攻防论坛：https://forum.butian.net/share/4251&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>DCSync Learning</title>
+      <link>http://localhost:1313/posts/dcsync-learning/</link>
+      <pubDate>Thu, 20 Mar 2025 16:41:40 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/dcsync-learning/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>云镜-Initial</title>
+      <link>http://localhost:1313/posts/initial/</link>
+      <pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/initial/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>TRX-CTF2025 复现</title>
+      <link>http://localhost:1313/posts/trx-ctf-writeups/</link>
+      <pubDate>Mon, 10 Mar 2025 10:49:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/trx-ctf-writeups/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>filter中发生的leak</title>
+      <link>http://localhost:1313/posts/filterleak/</link>
+      <pubDate>Thu, 25 Jul 2024 21:25:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/filterleak/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HITCON CTF 2024 web复现</title>
+      <link>http://localhost:1313/posts/hitcon2024/</link>
+      <pubDate>Mon, 22 Jul 2024 00:26:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/hitcon2024/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/hitcon2024/featured.png" />
+    </item>
+    
+    <item>
+      <title>基本ROP</title>
+      <link>http://localhost:1313/posts/baserop/</link>
+      <pubDate>Fri, 12 Jul 2024 14:38:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/baserop/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python Prototype chains pollution</title>
+      <link>http://localhost:1313/posts/python-prototype-chain-pollution/</link>
+      <pubDate>Thu, 11 Jul 2024 21:55:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/python-prototype-chain-pollution/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Node JS Prototype chain pollution</title>
+      <link>http://localhost:1313/posts/node-js-prototype-chain-pollution/</link>
+      <pubDate>Sun, 07 Jul 2024 22:55:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/node-js-prototype-chain-pollution/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Filter Chain learning</title>
+      <link>http://localhost:1313/posts/filter-chain-learning/</link>
+      <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/filter-chain-learning/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Open_basedir绕过</title>
+      <link>http://localhost:1313/posts/open_basedir%E7%BB%95%E8%BF%87%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/open_basedir%E7%BB%95%E8%BF%87%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>浅谈BashFuck</title>
+      <link>http://localhost:1313/posts/%E6%B5%85%E8%B0%88bashfuck/</link>
+      <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/%E6%B5%85%E8%B0%88bashfuck/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>深入浅出-Hash长度拓展攻击</title>
+      <link>http://localhost:1313/posts/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-hash%E9%95%BF%E5%BA%A6%E6%8B%93%E5%B1%95%E6%94%BB%E5%87%BB/</link>
+      <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-hash%E9%95%BF%E5%BA%A6%E6%8B%93%E5%B1%95%E6%94%BB%E5%87%BB/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>LD_PRELOAD学习</title>
+      <link>http://localhost:1313/posts/ld_preload/</link>
+      <pubDate>Wed, 21 Feb 2024 20:53:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/ld_preload/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>nosql-inject(mangodb and influxdb)</title>
+      <link>http://localhost:1313/posts/nosql-inject/</link>
+      <pubDate>Thu, 01 Feb 2024 23:27:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/nosql-inject/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CTFshow元旦水友赛部分wp-web</title>
+      <link>http://localhost:1313/posts/ctfshow-yuandan/</link>
+      <pubDate>Thu, 25 Jan 2024 22:14:21 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/ctfshow-yuandan/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/ctfshow-yuandan/featured.png" />
+    </item>
+    
+    <item>
+      <title>Knightctf 2024 WP</title>
+      <link>http://localhost:1313/posts/knightctf-2024/</link>
+      <pubDate>Mon, 22 Jan 2024 17:38:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/knightctf-2024/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>反序列化-phar</title>
+      <link>http://localhost:1313/posts/phar/</link>
+      <pubDate>Wed, 17 Jan 2024 18:32:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/phar/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>n1ctf-ezmaira</title>
+      <link>http://localhost:1313/posts/n1ctf-ezmaira/</link>
+      <pubDate>Fri, 03 Nov 2023 13:19:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/n1ctf-ezmaira/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ACTF2023 WP</title>
+      <link>http://localhost:1313/posts/actf/</link>
+      <pubDate>Tue, 31 Oct 2023 14:34:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/actf/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/actf/featured.png" />
+    </item>
+    
+    <item>
+      <title>PHP中非法参数名问题分析</title>
+      <link>http://localhost:1313/posts/php-parameter/</link>
+      <pubDate>Fri, 27 Oct 2023 16:59:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/php-parameter/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>天山固网线上赛WP</title>
+      <link>http://localhost:1313/posts/%E5%A4%A9%E5%B1%B1/</link>
+      <pubDate>Sat, 21 Oct 2023 21:55:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/%E5%A4%A9%E5%B1%B1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>udf导出表</title>
+      <link>http://localhost:1313/posts/lolita-n1/</link>
+      <pubDate>Wed, 13 Sep 2023 16:28:55 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/lolita-n1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>从XSS到 RCE (dompdf 0day)</title>
+      <link>http://localhost:1313/posts/rce-pdf/</link>
+      <pubDate>Wed, 13 Sep 2023 10:51:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/rce-pdf/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SICTFround2 wp</title>
+      <link>http://localhost:1313/posts/sictf/</link>
+      <pubDate>Mon, 06 Feb 2023 14:36:17 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/sictf/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ABOUT MEEE</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
