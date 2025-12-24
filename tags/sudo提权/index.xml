@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sudo提权 on Delete's blog</title><link>https://ml-hacker.github.io/tags/sudo%E6%8F%90%E6%9D%83/</link><description>Recent content in Sudo提权 on Delete's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Mar 2025 00:02:15 +0800</lastBuildDate><atom:link href="https://ml-hacker.github.io/tags/sudo%E6%8F%90%E6%9D%83/index.xml" rel="self" type="application/rss+xml"/><item><title>云镜-Initial</title><link>https://ml-hacker.github.io/posts/initial/</link><pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate><guid>https://ml-hacker.github.io/posts/initial/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://ml-hacker.github.io/posts/initial/featured.png"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sudo提权 on Delete&#39;s blog</title>
+    <link>https://ml-hacker.github.io/tags/sudo%E6%8F%90%E6%9D%83/</link>
+    <description>Recent content in Sudo提权 on Delete&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Tue, 18 Mar 2025 00:02:15 +0800</lastBuildDate><atom:link href="https://ml-hacker.github.io/tags/sudo%E6%8F%90%E6%9D%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>云镜-Initial</title>
+      <link>https://ml-hacker.github.io/posts/initial/</link>
+      <pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate>
+      
+      <guid>https://ml-hacker.github.io/posts/initial/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://ml-hacker.github.io/posts/initial/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
