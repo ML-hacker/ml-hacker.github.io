@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51699&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>AI Agent 基础概念与工作流 - Delete&#39;s blog</title><meta name="Description" content="整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。"><meta property="og:url" content="http://localhost:51699/posts/ai-agent-basics/">
+  <meta property="og:site_name" content="Delete&#39;s blog">
+  <meta property="og:title" content="AI Agent 基础概念与工作流">
+  <meta property="og:description" content="整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-09-05T15:01:27+08:00">
+    <meta property="article:modified_time" content="2026-09-05T15:01:27+08:00">
+    <meta property="article:tag" content="AI Agent">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Memory">
+    <meta property="article:tag" content="Tools">
+    <meta property="article:tag" content="Workflow">
+    <meta property="article:tag" content="RAG">
+    <meta property="og:image" content="http://localhost:51699/images/1.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:51699/images/1.jpg">
+  <meta name="twitter:title" content="AI Agent 基础概念与工作流">
+  <meta name="twitter:description" content="整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:51699/posts/ai-agent-basics/" /><link rel="prev" href="http://localhost:51699/posts/0ctf-web/" /><link rel="next" href="http://localhost:51699/posts/hugging-face-agent-course-1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AI Agent 基础概念与工作流",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:51699\/posts\/ai-agent-basics\/"
+        },"genre": "posts","keywords": "AI Agent, LLM, Memory, Tools, Workflow, RAG, Reflection","wordcount":  236 ,
+        "url": "http:\/\/localhost:51699\/posts\/ai-agent-basics\/","datePublished": "2026-09-05T15:01:27+08:00","dateModified": "2026-09-05T15:01:27+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Delete"
+            },"description": "整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Delete&#39;s blog"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class="fas fa-list"></i> Posts </a><a class="menu-item" href="/tags/"><i class="fas fa-tags"></i> Tags </a><a class="menu-item" href="/categories/"><i class="fas fa-folder"></i> Categories </a><a class="menu-item" href="/about/"><i class="fas fa-user"></i> About </a><a class="menu-item" href="/friends/"><i class="fas fa-link"></i> Friends </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Delete&#39;s blog"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class="fas fa-list"></i>Posts</a><a class="menu-item" href="/tags/" title=""><i class="fas fa-tags"></i>Tags</a><a class="menu-item" href="/categories/" title=""><i class="fas fa-folder"></i>Categories</a><a class="menu-item" href="/about/" title=""><i class="fas fa-user"></i>About</a><a class="menu-item" href="/friends/" title=""><i class="fas fa-link"></i>Friends</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single">
+        <h1 class="single-title animate__animated animate__flipInX">AI Agent 基础概念与工作流</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/ML-hacker" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Delete</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ai-agent/"><i class="far fa-folder" aria-hidden="true"></i>AI Agent</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-09-05">2026-09-05</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;236 words&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static" data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#conceptions">Conceptions</a></li>
+        <li><a href="#component">Component</a></li>
+        <li><a href="#agentic-workflow-vs-agentic-architecture">Agentic Workflow vs Agentic Architecture</a></li>
+        <li><a href="#workflow-model">workflow model</a>
+          <ul>
+            <li><a href="#planning-pattern">planning Pattern</a></li>
+            <li><a href="#tools-use-pattern">Tools Use pattern</a></li>
+            <li><a href="#reflection-pattern">Reflection Pattern</a></li>
+          </ul>
+        </li>
+        <li><a href="#agentic-rag">Agentic RAG</a></li>
+        <li><a href="#agentic-research-assistants">Agentic Research Assistants</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="ai-agent-的组成部分">AI Agent 的组成部分</h1>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/ai-agent-basics/figure-1.png"
+        data-srcset="/posts/ai-agent-basics/figure-1.png, /posts/ai-agent-basics/figure-1.png 1.5x, /posts/ai-agent-basics/figure-1.png 2x"
+        data-sizes="auto"
+        alt="/posts/ai-agent-basics/figure-1.png"
+        title="AI Agent 的组成部分" width="870" height="681" /></p>
+<p>有三个部分: LLM、Memory、Tools</p>
+<ul>
+<li>LLM包含推理能力,其中包含了Planning和Reflection两个能力,分解计划,以及基于结果的反思.</li>
+<li>Memory分为short-term and Long-term, 两个技能都具有上下文机制,区分其方法就是是否可以跨会话</li>
+<li>Tools,也就是可以调用外部工具,因为LLM只有推理和思考能力,但是加上tools的话就可以调用多个工具帮助其进行思考和总结甚至做出决策.</li>
+</ul>
+<h1 id="agent-workflow">Agent WorkFlow</h1>
+<h3 id="conceptions">Conceptions</h3>
+<p>WorkFlow 分为两类: <code>非代理型工作流</code>以及<code>代理型工作流</code>
+那么其中非代理型工作流仅仅依赖LLM能力,不具备自主决策以及任务执行能力。
+而代理型工作流则具备自主决策,可以自主利用工具进行搜索等能力来进行决策,以及LLM在其起到了推理作用,让传统工作流更具备响应性以及自主进化能力</p>
+<h3 id="component">Component</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/ai-agent-basics/figure-2.png"
+        data-srcset="/posts/ai-agent-basics/figure-2.png, /posts/ai-agent-basics/figure-2.png 1.5x, /posts/ai-agent-basics/figure-2.png 2x"
+        data-sizes="auto"
+        alt="/posts/ai-agent-basics/figure-2.png"
+        title="Workflow 类型" width="1720" height="928" />
+从图中我们可以看到三个workflow</p>
+<ul>
+<li>那么其中automated worklfow 仅仅是一个按步骤执行的一个flow,这就好比我们的脚本一样,提前设定好,然后跑起来</li>
+<li>而非代理型的workflow我们则可以看见只是将automated workflow的特定step交给LLM去接管.</li>
+<li>Agentic workflow可以自我抉择,监督以及得到反馈后自我寻找最优解然后执行</li>
+</ul>
+<h3 id="agentic-workflow-vs-agentic-architecture">Agentic Workflow vs Agentic Architecture</h3>
+<ul>
+<li><strong>代理工作流</strong> 关注<strong>任务执行的流程</strong>，即代理如何分解任务、使用工具、调整策略等。</li>
+<li><strong>代理架构</strong> 关注<strong>系统设计</strong>，即如何构建一个包含代理、工具和记忆系统的整体框架。</li>
+</ul>
+<h3 id="workflow-model">workflow model</h3>
+<h4 id="planning-pattern">planning Pattern</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/ai-agent-basics/figure-3.png"
+        data-srcset="/posts/ai-agent-basics/figure-3.png, /posts/ai-agent-basics/figure-3.png 1.5x, /posts/ai-agent-basics/figure-3.png 2x"
+        data-sizes="auto"
+        alt="/posts/ai-agent-basics/figure-3.png"
+        title="Planning Pattern" width="1712" height="886" />
+The panning pattern can divide complex tasks into pieces by pieces to let LLM more productively handle the task and also it can decrease the phenomenon of Hallucination.</p>
+<h4 id="tools-use-pattern">Tools Use pattern</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/ai-agent-basics/figure-4.png"
+        data-srcset="/posts/ai-agent-basics/figure-4.png, /posts/ai-agent-basics/figure-4.png 1.5x, /posts/ai-agent-basics/figure-4.png 2x"
+        data-sizes="auto"
+        alt="/posts/ai-agent-basics/figure-4.png"
+        title="Tools Use Pattern" width="1718" height="1202" />
+As we mentioned above, LLM is a reasoning model, which can not search information in realtime and check the fact whether it is true or not .
+So, in response to this problem, researchers introduced Retrieval-Augmented Generation (RAG), which can promote the accuracy of LLM in response.</p>
+<p>regarding to this patten, it is perfectly applied for tasks which need realtime data support and other resources in internet</p>
+<h4 id="reflection-pattern">Reflection Pattern</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/ai-agent-basics/figure-5.png"
+        data-srcset="/posts/ai-agent-basics/figure-5.png, /posts/ai-agent-basics/figure-5.png 1.5x, /posts/ai-agent-basics/figure-5.png 2x"
+        data-sizes="auto"
+        alt="/posts/ai-agent-basics/figure-5.png"
+        title="Reflection Pattern" width="1726" height="878" />
+Refection Pattern is a self-feedback mechanism, which an agent iteratively evaluates the quality of its own outputs or decisions before taking a final action.</p>
+<h3 id="agentic-rag">Agentic RAG</h3>
+<p>The whole name of RAG is Retrieval-Augmented Generation
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/ai-agent-basics/figure-6.png"
+        data-srcset="/posts/ai-agent-basics/figure-6.png, /posts/ai-agent-basics/figure-6.png 1.5x, /posts/ai-agent-basics/figure-6.png 2x"
+        data-sizes="auto"
+        alt="/posts/ai-agent-basics/figure-6.png"
+        title="Agentic RAG" width="818" height="354" />
+Somewhere this concept had been recognized as a useless tools, But today we still need to know how it work
+specific content we will open a new page to discuss it.</p>
+<h3 id="agentic-research-assistants">Agentic Research Assistants</h3>
+<p>ARA(Agentic Research Assistants) is called &ldquo;Deep Research&rdquo; by Ai company, which is based on RAG
+This assistants can generate in-depth reports and detailed insights into complex topics.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2026-09-05</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:51699/posts/ai-agent-basics/" data-title="AI Agent 基础概念与工作流" data-hashtags="AI Agent,LLM,Memory,Tools,Workflow,RAG,Reflection"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:51699/posts/ai-agent-basics/" data-title="AI Agent 基础概念与工作流"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:51699/posts/ai-agent-basics/" data-hashtag="AI Agent"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:51699/posts/ai-agent-basics/" data-title="AI Agent 基础概念与工作流"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:51699/posts/ai-agent-basics/" data-title="AI Agent 基础概念与工作流"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:51699/posts/ai-agent-basics/" data-title="AI Agent 基础概念与工作流"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:51699/posts/ai-agent-basics/" data-title="AI Agent 基础概念与工作流" data-description="整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。"><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a51699%2fposts%2fai-agent-basics%2f&amp;text=AI%20Agent%20%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5%e4%b8%8e%e5%b7%a5%e4%bd%9c%e6%b5%81" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags" aria-hidden="true"></i>&nbsp;<a href="/tags/ai-agent/">AI Agent</a>,&nbsp;<a href="/tags/llm/">LLM</a>,&nbsp;<a href="/tags/memory/">Memory</a>,&nbsp;<a href="/tags/tools/">Tools</a>,&nbsp;<a href="/tags/workflow/">Workflow</a>,&nbsp;<a href="/tags/rag/">RAG</a>,&nbsp;<a href="/tags/reflection/">Reflection</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/0ctf-web/" class="prev" rel="prev" title="0CTF-部分WEB复现"><i class="fas fa-angle-left" aria-hidden="true"></i>0CTF-部分WEB复现</a>
+            <a href="/posts/hugging-face-agent-course-1/" class="next" rel="next" title="Hugging Face Agent Course（一）：LLM、消息与工具">Hugging Face Agent Course（一）：LLM、消息与工具<i class="fas fa-angle-right" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.153.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/ML-hacker" target="_blank">Delete</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/css/custom.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/fuse/fuse.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script>window.config={"comment":{},"data":{"id-1":"Delete's blog","id-2":"Delete's blog"},"search":{"fuseIndexURL":"/index.json","fuseOpts":{"distance":100,"findAllMatches":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"minMatchCharLength":2,"threshold":0.3},"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"fuse"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.js"></script></body>
+</html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51699&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>探索前端安全-XSS(二) - Delete&#39;s blog</title><meta name="Description" content="A CTFer find something funny"><meta property="og:url" content="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/">
+        <title>探索前端安全-XSS(二) - Delete&#39;s blog</title><meta name="Description" content="A CTFer find something funny"><meta property="og:url" content="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/">
   <meta property="og:site_name" content="Delete&#39;s blog">
   <meta property="og:title" content="探索前端安全-XSS(二)">
   <meta property="og:description" content="首发于奇安信攻防社区：https://forum.butian.net/share/4535">
@@ -17,17 +17,17 @@
     <meta property="article:tag" content="Sanitizer">
     <meta property="article:tag" content="CSP">
     <meta property="article:tag" content="MXSS">
-    <meta property="og:image" content="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/featured.png">
+    <meta property="og:image" content="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/featured.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/featured.png">
+  <meta name="twitter:image" content="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/featured.png">
   <meta name="twitter:title" content="探索前端安全-XSS(二)">
   <meta name="twitter:description" content="首发于奇安信攻防社区：https://forum.butian.net/share/4535">
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site">
 <meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" /><link rel="prev" href="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%80/" /><link rel="next" href="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%89/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" /><link rel="prev" href="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%80/" /><link rel="next" href="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%89/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -37,9 +37,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/posts\/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C\/"
+            "@id": "http:\/\/localhost:51699\/posts\/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C\/"
         },"genre": "posts","keywords": "XSS, Sanitizer, CSP, mXSS","wordcount":  831 ,
-        "url": "http:\/\/localhost:1313\/posts\/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C\/","datePublished": "2025-08-22T00:59:15+08:00","dateModified": "2025-08-22T00:59:15+08:00","publisher": {
+        "url": "http:\/\/localhost:51699\/posts\/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C\/","datePublished": "2025-08-22T00:59:15+08:00","dateModified": "2025-08-22T00:59:15+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -882,7 +882,7 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)" data-hashtags="XSS,Sanitizer,CSP,mXSS"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-hashtag="XSS"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f%25E6%258E%25A2%25E7%25B4%25A2xss%25E5%25AE%2589%25E5%2585%25A8day%25E4%25BA%258C%2f&amp;text=%e6%8e%a2%e7%b4%a2%e5%89%8d%e7%ab%af%e5%ae%89%e5%85%a8-XSS%28%e4%ba%8c%29" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)" data-hashtags="XSS,Sanitizer,CSP,mXSS"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-hashtag="XSS"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/" data-title="探索前端安全-XSS(二)" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a51699%2fposts%2f%25E6%258E%25A2%25E7%25B4%25A2xss%25E5%25AE%2589%25E5%2585%25A8day%25E4%25BA%258C%2f&amp;text=%e6%8e%a2%e7%b4%a2%e5%89%8d%e7%ab%af%e5%ae%89%e5%85%a8-XSS%28%e4%ba%8c%29" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>

@@ -1,89 +1,89 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Delete&#39;s blog</title>
-        <link>http://localhost:1313/</link>
+        <link>http://localhost:51699/</link>
         <description>A CTFer find something funny</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Wed, 24 Dec 2025 13:28:55 &#43;0800</lastBuildDate>
-            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Tue, 08 Sep 2026 19:45:11 &#43;0800</lastBuildDate>
+            <atom:link href="http://localhost:51699/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Hugging Face Agent Course（二）：ReAct 与工具调用</title>
+    <link>http://localhost:51699/posts/hugging-face-agent-course-2/</link>
+    <pubDate>Tue, 08 Sep 2026 19:45:11 &#43;0800</pubDate>
+    <author>delete.golang@gmail.com (Delete)</author>
+    <guid>http://localhost:51699/posts/hugging-face-agent-course-2/</guid>
+    <description><![CDATA[记录 Agent 的 Reasoning-Action-Feedback 循环、ReAct、Hugging Face InferenceClient 与工具调用示例。]]></description>
+</item>
+<item>
+    <title>Hugging Face Agent Course（一）：LLM、消息与工具</title>
+    <link>http://localhost:51699/posts/hugging-face-agent-course-1/</link>
+    <pubDate>Mon, 07 Sep 2026 15:52:02 &#43;0800</pubDate>
+    <author>delete.golang@gmail.com (Delete)</author>
+    <guid>http://localhost:51699/posts/hugging-face-agent-course-1/</guid>
+    <description><![CDATA[从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。]]></description>
+</item>
+<item>
+    <title>AI Agent 基础概念与工作流</title>
+    <link>http://localhost:51699/posts/ai-agent-basics/</link>
+    <pubDate>Sat, 05 Sep 2026 15:01:27 &#43;0800</pubDate>
+    <author>delete.golang@gmail.com (Delete)</author>
+    <guid>http://localhost:51699/posts/ai-agent-basics/</guid>
+    <description><![CDATA[整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。]]></description>
+</item>
+<item>
     <title>0CTF-部分WEB复现</title>
-    <link>http://localhost:1313/posts/0ctf-web/</link>
+    <link>http://localhost:51699/posts/0ctf-web/</link>
     <pubDate>Wed, 24 Dec 2025 13:28:55 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/0ctf-web/</guid>
+    <guid>http://localhost:51699/posts/0ctf-web/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ASIS-CTF-2025复现</title>
-    <link>http://localhost:1313/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</link>
+    <link>http://localhost:51699/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</link>
     <pubDate>Thu, 25 Sep 2025 00:15:07 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</guid>
+    <guid>http://localhost:51699/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>TFCCTF2025 Webless</title>
-    <link>http://localhost:1313/posts/tfcctf2025-webless/</link>
+    <link>http://localhost:51699/posts/tfcctf2025-webless/</link>
     <pubDate>Tue, 16 Sep 2025 20:24:49 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/tfcctf2025-webless/</guid>
+    <guid>http://localhost:51699/posts/tfcctf2025-webless/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>探索前端安全Day(六)-终章</title>
-    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%85%AD/</link>
+    <link>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%85%AD/</link>
     <pubDate>Thu, 11 Sep 2025 23:41:01 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%85%AD/</guid>
+    <guid>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%85%AD/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>探索前端安全Day(五)-CSS-Injection</title>
-    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/</link>
+    <link>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/</link>
     <pubDate>Sat, 30 Aug 2025 23:17:54 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/</guid>
+    <guid>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>探索前端安全Day(四)-CSTI</title>
-    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%9B%9B/</link>
+    <link>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%9B%9B/</link>
     <pubDate>Sat, 30 Aug 2025 23:17:41 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%9B%9B/</guid>
+    <guid>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%9B%9B/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>探索XSS安全DAY（三）-DOM-COLBBERING</title>
-    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%89/</link>
+    <link>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%89/</link>
     <pubDate>Thu, 28 Aug 2025 02:03:07 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%89/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>探索前端安全-XSS(二)</title>
-    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/</link>
-    <pubDate>Fri, 22 Aug 2025 00:59:15 &#43;0800</pubDate>
-    <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/</guid>
-    <description><![CDATA[<p>首发于奇安信攻防社区：https://forum.butian.net/share/4535</p>]]></description>
-</item>
-<item>
-    <title>探索前端安全-XSS(一)</title>
-    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%80/</link>
-    <pubDate>Tue, 19 Aug 2025 23:44:15 &#43;0800</pubDate>
-    <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%80/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Midnight Sun CTF 2025 WEB</title>
-    <link>http://localhost:1313/posts/midnight-sun-ctf-2025-web/</link>
-    <pubDate>Thu, 22 May 2025 00:36:52 &#43;0800</pubDate>
-    <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/midnight-sun-ctf-2025-web/</guid>
+    <guid>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%B8%89/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

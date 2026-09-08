@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51699&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>探索前端安全Day(五)-CSS-Injection - Delete&#39;s blog</title><meta name="Description" content="A CTFer find something funny"><meta property="og:url" content="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/">
+        <title>探索前端安全Day(五)-CSS-Injection - Delete&#39;s blog</title><meta name="Description" content="A CTFer find something funny"><meta property="og:url" content="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/">
   <meta property="og:site_name" content="Delete&#39;s blog">
   <meta property="og:title" content="探索前端安全Day(五)-CSS-Injection">
   <meta property="og:description" content="A CTFer find something funny">
@@ -16,17 +16,17 @@
     <meta property="article:tag" content="CSS Inject">
     <meta property="article:tag" content="Leak">
     <meta property="article:tag" content="Scrollbar">
-    <meta property="og:image" content="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/featured.png">
+    <meta property="og:image" content="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/featured.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/featured.png">
+  <meta name="twitter:image" content="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/featured.png">
   <meta name="twitter:title" content="探索前端安全Day(五)-CSS-Injection">
   <meta name="twitter:description" content="A CTFer find something funny">
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site">
 <meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" /><link rel="prev" href="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%9B%9B/" /><link rel="next" href="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%85%AD/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" /><link rel="prev" href="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%9B%9B/" /><link rel="next" href="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E5%85%AD/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -36,9 +36,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/posts\/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94\/"
+            "@id": "http:\/\/localhost:51699\/posts\/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94\/"
         },"genre": "posts","keywords": "CSS inject, leak, scrollbar","wordcount":  1274 ,
-        "url": "http:\/\/localhost:1313\/posts\/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94\/","datePublished": "2025-08-30T23:17:54+08:00","dateModified": "2025-08-30T23:17:54+08:00","publisher": {
+        "url": "http:\/\/localhost:51699\/posts\/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94\/","datePublished": "2025-08-30T23:17:54+08:00","dateModified": "2025-08-30T23:17:54+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -421,7 +421,7 @@ Pepe Vila指出可以利用@import来引入style，具体的思路就是，在�
 可以看出来leak出来了。
 所以只要用<code>@import</code>这个CSS 的功能，就可以做到「不重新载入页面，但可以动态载入新的style」，进而偷取后面的每一个字符。</p>
 <p>那么对于leak速度的问题，我们可以取双向爆破的方法，也就是，一个从<code>^</code>开始一个从<code>$</code>开始，从而将效率翻倍，但是这里要记住一个点就是，要用到不同的属性，一个用background，另一个要用border-background，不然会冲突只发出一个request，像这样</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-css">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
@@ -891,7 +891,7 @@ but这里我跑不出来了，也许是脚本有问题，但是这个思路的�
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection" data-hashtags="CSS inject,leak,scrollbar"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-hashtag="CSS inject"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f%25E6%258E%25A2%25E7%25B4%25A2%25E5%2589%258D%25E7%25AB%25AF%25E5%25AE%2589%25E5%2585%25A8day%25E4%25BA%2594%2f&amp;text=%e6%8e%a2%e7%b4%a2%e5%89%8d%e7%ab%af%e5%ae%89%e5%85%a8Day%28%e4%ba%94%29-CSS-Injection" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection" data-hashtags="CSS inject,leak,scrollbar"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-hashtag="CSS inject"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8day%E4%BA%94/" data-title="探索前端安全Day(五)-CSS-Injection" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a51699%2fposts%2f%25E6%258E%25A2%25E7%25B4%25A2%25E5%2589%258D%25E7%25AB%25AF%25E5%25AE%2589%25E5%2585%25A8day%25E4%25BA%2594%2f&amp;text=%e6%8e%a2%e7%b4%a2%e5%89%8d%e7%ab%af%e5%ae%89%e5%85%a8Day%28%e4%ba%94%29-CSS-Injection" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>

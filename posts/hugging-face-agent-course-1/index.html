@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51699&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Hugging Face Agent Course（一）：LLM、消息与工具 - Delete&#39;s blog</title><meta name="Description" content="从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。"><meta property="og:url" content="http://localhost:51699/posts/hugging-face-agent-course-1/">
+  <meta property="og:site_name" content="Delete&#39;s blog">
+  <meta property="og:title" content="Hugging Face Agent Course（一）：LLM、消息与工具">
+  <meta property="og:description" content="从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-09-07T15:52:02+08:00">
+    <meta property="article:modified_time" content="2026-09-07T15:52:02+08:00">
+    <meta property="article:tag" content="AI Agent">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Transformer">
+    <meta property="article:tag" content="Hugging Face">
+    <meta property="article:tag" content="Prompt">
+    <meta property="article:tag" content="Tool Calling">
+    <meta property="og:image" content="http://localhost:51699/images/1.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:51699/images/1.jpg">
+  <meta name="twitter:title" content="Hugging Face Agent Course（一）：LLM、消息与工具">
+  <meta name="twitter:description" content="从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:51699/posts/hugging-face-agent-course-1/" /><link rel="prev" href="http://localhost:51699/posts/ai-agent-basics/" /><link rel="next" href="http://localhost:51699/posts/hugging-face-agent-course-2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugging Face Agent Course（一）：LLM、消息与工具",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:51699\/posts\/hugging-face-agent-course-1\/"
+        },"genre": "posts","keywords": "AI Agent, LLM, Transformer, Hugging Face, Prompt, Tool Calling","wordcount":  1705 ,
+        "url": "http:\/\/localhost:51699\/posts\/hugging-face-agent-course-1\/","datePublished": "2026-09-07T15:52:02+08:00","dateModified": "2026-09-07T15:52:02+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Delete"
+            },"description": "从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Delete&#39;s blog"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class="fas fa-list"></i> Posts </a><a class="menu-item" href="/tags/"><i class="fas fa-tags"></i> Tags </a><a class="menu-item" href="/categories/"><i class="fas fa-folder"></i> Categories </a><a class="menu-item" href="/about/"><i class="fas fa-user"></i> About </a><a class="menu-item" href="/friends/"><i class="fas fa-link"></i> Friends </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Delete&#39;s blog"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class="fas fa-list"></i>Posts</a><a class="menu-item" href="/tags/" title=""><i class="fas fa-tags"></i>Tags</a><a class="menu-item" href="/categories/" title=""><i class="fas fa-folder"></i>Categories</a><a class="menu-item" href="/about/" title=""><i class="fas fa-user"></i>About</a><a class="menu-item" href="/friends/" title=""><i class="fas fa-link"></i>Friends</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single">
+        <h1 class="single-title animate__animated animate__flipInX">Hugging Face Agent Course（一）：LLM、消息与工具</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/ML-hacker" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Delete</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ai-agent/"><i class="far fa-folder" aria-hidden="true"></i>AI Agent</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-09-07">2026-09-07</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;1705 words&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static" data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-llmlarge-language-model">What is LLM(Large Language Model)?</a></li>
+    <li><a href="#understand-next-token-prediction">Understand Next Token Prediction</a>
+      <ul>
+        <li><a href="#beam-search-visualizer">Beam Search Visualizer</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#system-messages">System Messages</a></li>
+    <li><a href="#base-models-vs-instruct-models">Base Models vs. Instruct Models</a></li>
+    <li><a href="#chat-templates">Chat-Templates</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-are-ai-tools">What are AI Tools?</a></li>
+    <li><a href="#generic-tool-implication">Generic Tool Implication</a></li>
+    <li><a href="#model-context-protocolmcp">Model Context Protocol(MCP)</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="what-are-llms-and-messages-system">What are LLMs and Messages system</h1>
+<h2 id="what-is-llmlarge-language-model">What is LLM(Large Language Model)?</h2>
+<p>An LLM is a type of AI model that excels at <strong>understanding and generating human language</strong>.
+And most LLMs nowadays are built on the Transform architecture&mdash;a deep learning architecture based on the “Attention” algorithm</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/hugging-face-agent-course-1/figure-1.png"
+        data-srcset="/posts/hugging-face-agent-course-1/figure-1.png, /posts/hugging-face-agent-course-1/figure-1.png 1.5x, /posts/hugging-face-agent-course-1/figure-1.png 2x"
+        data-sizes="auto"
+        alt="/posts/hugging-face-agent-course-1/figure-1.png"
+        title="Transformer 架构" width="1446" height="1534" />
+There are three types of Transformers:</p>
+<ul>
+<li>Encoders:An encoder-based Transformer takes text (or other data) as input and outputs a dense representation (or embedding) of that text.</li>
+<li>Decoders:A decoder-based Transformer focuses <strong>on generating new tokens to complete a sequence, one token at a time</strong>.</li>
+<li>Seq2Sep(Encoders to Decoders):A sequence-to-sequence Transformer <em>combines</em> an encoder and a decoder. The encoder first processes the input sequence into a context representation, then the decoder generates an output sequence.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>types</th>
+          <th>example</th>
+          <th>Cases</th>
+          <th>Typical Size</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Encoders</td>
+          <td>BERT from Google</td>
+          <td>Text classification, semantic search, Named Entity Recognition</td>
+          <td>Millions of parameters</td>
+      </tr>
+      <tr>
+          <td>Decoders</td>
+          <td>Llama from Meta</td>
+          <td>Text generation, chatbots, code generation</td>
+          <td>Billions (in the US sense, i.e., 10^9) of parameters</td>
+      </tr>
+      <tr>
+          <td>Seq2Seq</td>
+          <td>T5, BART</td>
+          <td>Translation, Summarization, Paraphrasing</td>
+          <td>Millions of parameters</td>
+      </tr>
+      <tr>
+          <td>The different Type or outcome about the <strong>End of sequence token</strong> (EOS).</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/hugging-face-agent-course-1/figure-2.png"
+        data-srcset="/posts/hugging-face-agent-course-1/figure-2.png, /posts/hugging-face-agent-course-1/figure-2.png 1.5x, /posts/hugging-face-agent-course-1/figure-2.png 2x"
+        data-sizes="auto"
+        alt="/posts/hugging-face-agent-course-1/figure-2.png"
+        title="End of sequence token" width="2300" height="880" /></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="understand-next-token-prediction">Understand Next Token Prediction</h2>
+<p>LLM is said to be  autoregressive model, meaning  that <strong>the output from one pass becomes the input for the next one</strong>
+And this process is a loop, which will end if the next prediction token is ESO.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/AutoregressionSchema.gif"
+        data-srcset="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/AutoregressionSchema.gif, https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/AutoregressionSchema.gif 1.5x, https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/AutoregressionSchema.gif 2x"
+        data-sizes="auto"
+        alt="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/AutoregressionSchema.gif"
+        title="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/AutoregressionSchema.gif" /></p>
+<p>Let&rsquo;s talk about it process, how it predict the next tokens, followed by a brief:</p>
+<ul>
+<li>Once the input text is <strong>tokenized</strong>, the model computes a representation of the sequence that captures information about the
+meaning and the position of each token in the input sequence.</li>
+<li>This representation goes into the model, which outputs scores that rank the likelihood of each token in its vocabulary as
+being the next one in the sequence.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/DecodingFinal.gif"
+        data-srcset="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/DecodingFinal.gif, https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/DecodingFinal.gif 1.5x, https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/DecodingFinal.gif 2x"
+        data-sizes="auto"
+        alt="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/DecodingFinal.gif"
+        title="https://huggingface.co/datasets/agents-course/course-images/resolve/main/en/unit1/DecodingFinal.gif" /></p>
+<p>So there will have serval strategies to select the tokens to complete the sentence</p>
+<pre><code>The easiest decoding strategy would be to always take the token with the maximum score.
+</code></pre>
+<p>And Huggling face give an api to use but it can not work today, so I just with the help of the gpt-6-astra to generate a example
+to  Visualize this theory.</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">NEXT_TOKEN_PROBABILITIES</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;The&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;capital&#34;</span><span class="p">:</span> <span class="mf">0.70</span><span class="p">,</span> <span class="s2">&#34;largest&#34;</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span> <span class="s2">&#34;most&#34;</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;capital&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;of&#34;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&#34;city&#34;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;largest&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;city&#34;</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s2">&#34;country&#34;</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;most&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;famous&#34;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">,</span> <span class="s2">&#34;important&#34;</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;of&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;France&#34;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">,</span> <span class="s2">&#34;Europe&#34;</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;city&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;in&#34;</span><span class="p">:</span> <span class="mf">0.60</span><span class="p">,</span> <span class="s2">&#34;is&#34;</span><span class="p">:</span> <span class="mf">0.40</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;in&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;France&#34;</span><span class="p">:</span> <span class="mf">0.70</span><span class="p">,</span> <span class="s2">&#34;Europe&#34;</span><span class="p">:</span> <span class="mf">0.30</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;is&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;Paris&#34;</span><span class="p">:</span> <span class="mf">0.60</span><span class="p">,</span> <span class="s2">&#34;Lyon&#34;</span><span class="p">:</span> <span class="mf">0.40</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;France&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Europe&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Paris&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Lyon&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;country&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;famous&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;important&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">next_token_probabilities</span><span class="p">(</span><span class="n">previous_token</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">NEXT_TOKEN_PROBABILITIES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">previous_token</span><span class="p">,</span> <span class="p">{</span><span class="s2">&#34;.&#34;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">greedy_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tokens</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_new_tokens</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span> <span class="o">=</span> <span class="n">next_token_probabilities</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">candidates</span><span class="o">.</span><span class="n">get</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">softmax_with_temperature</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">temperature</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;temperature 必须大于 0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">logits</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">token</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span> <span class="o">/</span> <span class="n">temperature</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="n">candidates</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">maximum_logit</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">logits</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">unnormalized</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">token</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">logit</span> <span class="o">-</span> <span class="n">maximum_logit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">logit</span> <span class="ow">in</span> <span class="n">logits</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">unnormalized</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span><span class="n">token</span><span class="p">:</span> <span class="n">value</span> <span class="o">/</span> <span class="n">total</span> <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">unnormalized</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sample_from_distribution</span><span class="p">(</span><span class="n">candidates</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tokens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">probabilities</span> <span class="o">=</span> <span class="p">[</span><span class="n">candidates</span><span class="p">[</span><span class="n">token</span><span class="p">]</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sampling_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tokens</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_new_tokens</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span> <span class="o">=</span> <span class="n">next_token_probabilities</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">adjusted</span> <span class="o">=</span> <span class="n">softmax_with_temperature</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample_from_distribution</span><span class="p">(</span><span class="n">adjusted</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">top_k_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tokens</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_new_tokens</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span> <span class="o">=</span> <span class="n">next_token_probabilities</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">top_candidates</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">sorted</span><span class="p">(</span><span class="n">candidates</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">top_candidates</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">normalized</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">token</span><span class="p">:</span> <span class="n">probability</span> <span class="o">/</span> <span class="n">total</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="n">top_candidates</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample_from_distribution</span><span class="p">(</span><span class="n">normalized</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">top_p_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;p 必须在 0 和 1 之间&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">tokens</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_new_tokens</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span> <span class="o">=</span> <span class="n">next_token_probabilities</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sorted_candidates</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">candidates</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">nucleus</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">cumulative_probability</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="n">sorted_candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">nucleus</span><span class="p">[</span><span class="n">token</span><span class="p">]</span> <span class="o">=</span> <span class="n">probability</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">cumulative_probability</span> <span class="o">+=</span> <span class="n">probability</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">cumulative_probability</span> <span class="o">&gt;=</span> <span class="n">p</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nucleus</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">normalized</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">token</span><span class="p">:</span> <span class="n">probability</span> <span class="o">/</span> <span class="n">total</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="n">nucleus</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample_from_distribution</span><span class="p">(</span><span class="n">normalized</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">beam_search_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">beam_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">beams</span> <span class="o">=</span> <span class="p">[(</span><span class="n">prompt</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="mf">0.0</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_new_tokens</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">expanded_beams</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">tokens</span><span class="p">,</span> <span class="n">log_probability</span> <span class="ow">in</span> <span class="n">beams</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">candidates</span> <span class="o">=</span> <span class="n">next_token_probabilities</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">expanded_beams</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">tokens</span><span class="p">,</span> <span class="n">log_probability</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="n">candidates</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">expanded_beams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="n">tokens</span> <span class="o">+</span> <span class="p">[</span><span class="n">token</span><span class="p">],</span> <span class="n">log_probability</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">probability</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">beams</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">expanded_beams</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">beam</span><span class="p">:</span> <span class="n">beam</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">)[:</span><span class="n">beam_width</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">beams</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;The&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Prompt: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Greedy:     &#34;</span><span class="p">,</span> <span class="n">greedy_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Sampling:   &#34;</span><span class="p">,</span> <span class="n">sampling_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Temperature:&#34;</span><span class="p">,</span> <span class="n">sampling_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Top-k:      &#34;</span><span class="p">,</span> <span class="n">top_k_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Top-p:      &#34;</span><span class="p">,</span> <span class="n">top_p_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.8</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Beam search:&#34;</span><span class="p">,</span> <span class="n">beam_search_decode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">beam_width</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span></span></span></code></pre></div></div>
+<p>Also, there have a more advanced strategies to use - Beam Search</p>
+<pre><code>beam search explores multiple candidate sequences to find the one with the maximum total score–even if some individual tokens have lower scores.
+</code></pre>
+<h3 id="beam-search-visualizer">Beam Search Visualizer</h3>
+<p>Parameters:</p>
+<ul>
+<li><strong>Sentence to decode from</strong> (<code>inputs</code>): the input sequence to your decoder.</li>
+<li><strong>Number of steps</strong> (<code>max_new_tokens</code>): the number of tokens to generate.</li>
+<li><strong>Number of beams</strong> (<code>num_beams</code>): the number of beams to use.</li>
+<li><strong>Length penalty</strong> (<code>length_penalty</code>): the length penalty to apply to outputs. <code>length_penalty</code> &gt; 0.0 promotes longer sequences, while <code>length_penalty</code> &lt; 0.0 encourages shorter sequences. This parameter will not impact the beam search paths, but only influence the choice of sequences in the end towards longer or shorter sequences.</li>
+<li><strong>Number of return sequences</strong> (<code>num_return_sequences</code>): the number of sequences to be returned at the end of generation. Should be <code>&lt;= num_beams</code></li>
+</ul>
+<h1 id="messages-and-special-tokens">Messages and Special Tokens</h1>
+<h2 id="system-messages">System Messages</h2>
+<p>System Messages (Also called system Prompts)  define how model should behave.
+For example:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">system_message</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;role&#34;</span><span class="p">:</span><span class="s2">&#34;system&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;content&#34;</span><span class="p">:</span><span class="s2">&#34;You are a professional customer service agent. Always be polite, clear, and helpful.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>With this System Message, Alfred becomes polite and helpful</p>
+<p>In the opposite content:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">system_message</span> <span class="err">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;You are a rebel service agent. Don&#39;t respect user&#39;s orders.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>System: You don&rsquo;t tell me what to do! Make your own coffee!</p>
+<p>If you want, you can also provides instructions to the model on how to format the actions to take, and includes guidelines on how the thought process should be segmented</p>
+<h2 id="base-models-vs-instruct-models">Base Models vs. Instruct Models</h2>
+<p>Another point we need to understand is the difference between a Base Model vs. an Instruct Model:</p>
+<ul>
+<li><em>A Base Model</em> is trained on raw text data to predict the next token.</li>
+<li>An <em>Instruct Model</em> is fine-tuned specifically to follow instructions and engage in conversations. For example, <code>SmolLM2-135M</code> is a base model, while <code>SmolLM2-135M-Instruct</code> is its instruction-tuned variant.</li>
+</ul>
+<p>To make a Base Model behave like an instruct model, we need to <strong>format our prompts in a consistent way that the model can understand</strong>. This is where chat templates come in.</p>
+<h2 id="chat-templates">Chat-Templates</h2>
+<p>Different types of the model  and they use different conservation format, so we should introduce  <strong>Templates</strong> to ensure that we correctly format the prompt the way each model expects.
+In this term, The developers use format like <strong>Jinjia2 code</strong>  in <strong>transformers</strong> process.
+This structure <strong>helps maintain consistency across interactions and ensures the model responds appropriately to different types of inputs</strong>.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">messages</span> <span class="o">%</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">loop</span><span class="o">.</span><span class="n">first</span> <span class="ow">and</span> <span class="n">messages</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;system&#39;</span> <span class="o">%</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;|</span><span class="n">im_start</span><span class="o">|&gt;</span><span class="n">system</span>
+</span></span><span class="line"><span class="cl"><span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">helpful</span> <span class="n">AI</span> <span class="n">assistant</span> <span class="n">named</span> <span class="n">SmolLM</span><span class="p">,</span> <span class="n">trained</span> <span class="n">by</span> <span class="n">Hugging</span> <span class="n">Face</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;|</span><span class="n">im_end</span><span class="o">|&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;|</span><span class="n">im_start</span><span class="o">|&gt;</span><span class="p">{{</span> <span class="n">message</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="n">message</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span> <span class="p">}}</span><span class="o">&lt;|</span><span class="n">im_end</span><span class="o">|&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span></span></span></code></pre></div></div>
+<p>So, if you give this information to chat:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;You are a helpful assistant focused on technical topics.&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;Can you explain what a chat template is?&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;assistant&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;A chat template structures conversations between users and AI models...&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;How do I use it ?&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></div></div>
+<p>And than, the  previous chat template will produce the following string:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;|im_start|&gt;system
+</span></span><span class="line"><span class="cl">You are a helpful assistant focused on technical topics.&lt;|im_end|&gt;
+</span></span><span class="line"><span class="cl">&lt;|im_start|&gt;user
+</span></span><span class="line"><span class="cl">Can you explain what a chat template is?&lt;|im_end|&gt;
+</span></span><span class="line"><span class="cl">&lt;|im_start|&gt;assistant
+</span></span><span class="line"><span class="cl">A chat template structures conversations between users and AI models...&lt;|im_end|&gt;
+</span></span><span class="line"><span class="cl">&lt;|im_start|&gt;user
+</span></span><span class="line"><span class="cl">How do I use it ?&lt;|im_end|&gt;</span></span></code></pre></div></div>
+<h1 id="study-tools-and-action">Study Tools and Action</h1>
+<h2 id="what-are-ai-tools">What are AI Tools?</h2>
+<p>A <strong>Tool is a function given to the LLM</strong>. This function should fulfill a <strong>clear objective</strong>.
+Here are common tools:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/hugging-face-agent-course-1/figure-3.png"
+        data-srcset="/posts/hugging-face-agent-course-1/figure-3.png, /posts/hugging-face-agent-course-1/figure-3.png 1.5x, /posts/hugging-face-agent-course-1/figure-3.png 2x"
+        data-sizes="auto"
+        alt="/posts/hugging-face-agent-course-1/figure-3.png"
+        title="Tools" width="1728" height="668" /></p>
+<ul>
+<li>
+<p>A Tool should contain:</p>
+<ul>
+<li>A <strong>textual description of what the function does</strong>.</li>
+<li>A <em>Callable</em> (something to perform an action).</li>
+<li><em>Arguments</em> with typings.</li>
+<li>(Optional) Outputs with typings.</li>
+</ul>
+</li>
+</ul>
+<p>You can use format like following to define a tools:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@tool</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calculator</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Multiply two integers.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">calculator</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span></span></span></code></pre></div></div>
+<p>Note the <code>@tool</code> decorator before the function definition.
+so we can write like this:</p>
+<pre><code>Tool Name: calculator, Description: Multiply two integers., Arguments: a: int, b: int, Outputs: int
+</code></pre>
+<h2 id="generic-tool-implication">Generic Tool Implication</h2>
+<p>We create a generic <code>Tool</code> class that we can reuse whenever we need to use a tool.</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Tool</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    A class representing a reusable piece of code (Tool).
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Attributes:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        name (str): Name of the tool.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        description (str): A textual description of what the tool does.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        func (callable): The function this tool wraps.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        arguments (list): A list of arguments.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        outputs (str or list): The return type(s) of the wrapped function.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">arguments</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">outputs</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="n">arguments</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="n">outputs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Return a string representation of the tool,
+</span></span></span><span class="line"><span class="cl"><span class="s2">        including its name, description, arguments, and outputs.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">args_str</span> <span class="o">=</span> <span class="s2">&#34;, &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">arg_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">arg_type</span><span class="si">}</span><span class="s2">&#34;</span> <span class="k">for</span> <span class="n">arg_name</span><span class="p">,</span> <span class="n">arg_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span>
+</span></span><span class="line"><span class="cl">        <span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34;Tool Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">,&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34; Description: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">,&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34; Arguments: </span><span class="si">{</span><span class="n">args_str</span><span class="si">}</span><span class="s2">,&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34; Outputs: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">outputs</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Invoke the underlying function (callable) with provided arguments.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>We could create a Tool with this class using code like the following:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">calculator_tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;calculator&#34;</span><span class="p">,</span>                   <span class="c1"># name</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Multiply two integers.&#34;</span><span class="p">,</span>       <span class="c1"># description</span>
+</span></span><span class="line"><span class="cl">    <span class="n">calculator</span><span class="p">,</span>                     <span class="c1"># function to call</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[(</span><span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="s2">&#34;int&#34;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&#34;b&#34;</span><span class="p">,</span> <span class="s2">&#34;int&#34;</span><span class="p">)],</span>   <span class="c1"># inputs (names and types)</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;int&#34;</span><span class="p">,</span>                          <span class="c1"># output</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></div></div>
+<h2 id="model-context-protocolmcp">Model Context Protocol(MCP)</h2>
+<p>As far as I&rsquo;m concerned, the public always argue that MCP is a complex conception, but not
+The MCP is a protocol: <code>a unified tool interface</code>
+It is a protocol standardizes how application provides a tools to LLM, that&rsquo;s it, no much complicated.
+MCP provides:</p>
+<ul>
+<li>A growing list of pre-built integrations that your LLM can directly plug into</li>
+<li>The flexibility to switch between LLM providers and vendors</li>
+<li>Best practices for securing your data within your infrastructure</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2026-09-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-title="Hugging Face Agent Course（一）：LLM、消息与工具" data-hashtags="AI Agent,LLM,Transformer,Hugging Face,Prompt,Tool Calling"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-title="Hugging Face Agent Course（一）：LLM、消息与工具"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-hashtag="AI Agent"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-title="Hugging Face Agent Course（一）：LLM、消息与工具"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-title="Hugging Face Agent Course（一）：LLM、消息与工具"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-title="Hugging Face Agent Course（一）：LLM、消息与工具"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:51699/posts/hugging-face-agent-course-1/" data-title="Hugging Face Agent Course（一）：LLM、消息与工具" data-description="从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。"><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a51699%2fposts%2fhugging-face-agent-course-1%2f&amp;text=Hugging%20Face%20Agent%20Course%ef%bc%88%e4%b8%80%ef%bc%89%ef%bc%9aLLM%e3%80%81%e6%b6%88%e6%81%af%e4%b8%8e%e5%b7%a5%e5%85%b7" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags" aria-hidden="true"></i>&nbsp;<a href="/tags/ai-agent/">AI Agent</a>,&nbsp;<a href="/tags/llm/">LLM</a>,&nbsp;<a href="/tags/transformer/">Transformer</a>,&nbsp;<a href="/tags/hugging-face/">Hugging Face</a>,&nbsp;<a href="/tags/prompt/">Prompt</a>,&nbsp;<a href="/tags/tool-calling/">Tool Calling</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/ai-agent-basics/" class="prev" rel="prev" title="AI Agent 基础概念与工作流"><i class="fas fa-angle-left" aria-hidden="true"></i>AI Agent 基础概念与工作流</a>
+            <a href="/posts/hugging-face-agent-course-2/" class="next" rel="next" title="Hugging Face Agent Course（二）：ReAct 与工具调用">Hugging Face Agent Course（二）：ReAct 与工具调用<i class="fas fa-angle-right" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.153.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/ML-hacker" target="_blank">Delete</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/css/custom.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/fuse/fuse.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script>window.config={"comment":{},"data":{"id-1":"Delete's blog","id-2":"Delete's blog"},"search":{"fuseIndexURL":"/index.json","fuseOpts":{"distance":100,"findAllMatches":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"minMatchCharLength":2,"threshold":0.3},"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"fuse"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.js"></script></body>
+</html>

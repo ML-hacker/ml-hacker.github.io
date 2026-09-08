@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Initial - Tag - Delete&#39;s blog</title>
-        <link>http://localhost:1313/tags/initial/</link>
+        <link>http://localhost:51699/tags/initial/</link>
         <description>Initial - Tag - Delete&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Tue, 18 Mar 2025 00:02:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/initial/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Tue, 18 Mar 2025 00:02:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:51699/tags/initial/" rel="self" type="application/rss+xml" /><item>
     <title>云镜-Initial</title>
-    <link>http://localhost:1313/posts/initial/</link>
+    <link>http://localhost:51699/posts/initial/</link>
     <pubDate>Tue, 18 Mar 2025 00:02:15 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/initial/</guid>
+    <guid>http://localhost:51699/posts/initial/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
