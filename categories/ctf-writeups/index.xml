@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CTF Writeups - Category - Delete&#39;s blog</title>
-        <link>http://localhost:51699/categories/ctf-writeups/</link>
+        <link>http://localhost:1313/categories/ctf-writeups/</link>
         <description>CTF Writeups - Category - Delete&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Wed, 24 Dec 2025 13:28:55 &#43;0800</lastBuildDate><atom:link href="http://localhost:51699/categories/ctf-writeups/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Wed, 24 Dec 2025 13:28:55 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/ctf-writeups/" rel="self" type="application/rss+xml" /><item>
     <title>0CTF-部分WEB复现</title>
-    <link>http://localhost:51699/posts/0ctf-web/</link>
+    <link>http://localhost:1313/posts/0ctf-web/</link>
     <pubDate>Wed, 24 Dec 2025 13:28:55 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/0ctf-web/</guid>
+    <guid>http://localhost:1313/posts/0ctf-web/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ASIS-CTF-2025复现</title>
-    <link>http://localhost:51699/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</link>
+    <link>http://localhost:1313/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</link>
     <pubDate>Thu, 25 Sep 2025 00:15:07 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</guid>
+    <guid>http://localhost:1313/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>TFCCTF2025 Webless</title>
-    <link>http://localhost:51699/posts/tfcctf2025-webless/</link>
+    <link>http://localhost:1313/posts/tfcctf2025-webless/</link>
     <pubDate>Tue, 16 Sep 2025 20:24:49 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/tfcctf2025-webless/</guid>
+    <guid>http://localhost:1313/posts/tfcctf2025-webless/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Midnight Sun CTF 2025 WEB</title>
-    <link>http://localhost:51699/posts/midnight-sun-ctf-2025-web/</link>
+    <link>http://localhost:1313/posts/midnight-sun-ctf-2025-web/</link>
     <pubDate>Thu, 22 May 2025 00:36:52 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/midnight-sun-ctf-2025-web/</guid>
+    <guid>http://localhost:1313/posts/midnight-sun-ctf-2025-web/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>N1junior2025</title>
-    <link>http://localhost:51699/posts/n1junior2025/</link>
+    <link>http://localhost:1313/posts/n1junior2025/</link>
     <pubDate>Thu, 15 May 2025 19:33:17 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/n1junior2025/</guid>
+    <guid>http://localhost:1313/posts/n1junior2025/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>云镜-Initial</title>
-    <link>http://localhost:51699/posts/initial/</link>
+    <link>http://localhost:1313/posts/initial/</link>
     <pubDate>Tue, 18 Mar 2025 00:02:15 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/initial/</guid>
+    <guid>http://localhost:1313/posts/initial/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>TRX-CTF2025 复现</title>
-    <link>http://localhost:51699/posts/trxctf-2025/</link>
+    <link>http://localhost:1313/posts/trxctf-2025/</link>
     <pubDate>Mon, 10 Mar 2025 10:49:20 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/trxctf-2025/</guid>
+    <guid>http://localhost:1313/posts/trxctf-2025/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>HITCON CTF 2024 web复现</title>
-    <link>http://localhost:51699/posts/hitcon2024/</link>
+    <link>http://localhost:1313/posts/hitcon2024/</link>
     <pubDate>Mon, 22 Jul 2024 00:26:26 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/hitcon2024/</guid>
+    <guid>http://localhost:1313/posts/hitcon2024/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>CTFshow元旦水友赛部分wp-web</title>
-    <link>http://localhost:51699/posts/ctfshow-yuandan/</link>
+    <link>http://localhost:1313/posts/ctfshow-yuandan/</link>
     <pubDate>Thu, 25 Jan 2024 22:14:21 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/ctfshow-yuandan/</guid>
+    <guid>http://localhost:1313/posts/ctfshow-yuandan/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Knightctf 2024 WP</title>
-    <link>http://localhost:51699/posts/knightctf2024/</link>
+    <link>http://localhost:1313/posts/knightctf2024/</link>
     <pubDate>Mon, 22 Jan 2024 17:38:41 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/knightctf2024/</guid>
+    <guid>http://localhost:1313/posts/knightctf2024/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

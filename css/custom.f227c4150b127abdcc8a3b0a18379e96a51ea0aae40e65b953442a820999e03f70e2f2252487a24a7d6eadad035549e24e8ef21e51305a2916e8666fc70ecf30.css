@@ -85,29 +85,18 @@ body[theme="dark"] #header-desktop {
 }
 
 #header-desktop .header-wrapper {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 768px;
-  min-height: 4.5rem;
+  width: min(100%, 768px);
   margin: 0 auto;
+  min-height: 4.5rem;
   padding: 1.25rem 1rem;
-  overflow: visible;
 }
 
 #header-desktop .header-wrapper .header-title {
-  position: relative;
-  z-index: 3;
-  flex: 0 0 auto;
-  min-width: fit-content;
+  flex: 0 1 auto;
+  min-width: 0;
   margin-right: 1rem;
   font-size: 1.5rem;
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: visible;
+  line-height: 1;
 }
 
 #header-desktop .menu { flex: 0 0 auto; }
@@ -243,95 +232,6 @@ body[theme="dark"] #header-mobile .menu {
   border: 1px solid rgba(127, 127, 127, 0.2);
   border-radius: 16px;
   background: rgba(127, 127, 127, 0.06);
-}
-
-.home[data-home="posts"] .summary {
-  width: calc(100% - 8rem);
-  margin-left: 8rem;
-}
-
-.home[data-home="posts"] .summary .single-title {
-  margin: .6rem 0 .3rem;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  font-weight: 700;
-}
-
-.home[data-home="posts"] .summary .single-title a {
-  color: #b8c2d1;
-  text-decoration: none;
-}
-
-.home[data-home="posts"] .summary .single-title a:hover {
-  color: #66ccff;
-}
-
-@view-transition {
-  navigation: auto;
-}
-
-/* 不让整页同时淡入淡出，只突出标题移动 */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-}
-
-/* 主页标题与文章页标题之间的共享元素转场 */
-::view-transition-group(*) {
-  animation-duration: 420ms;
-  animation-timing-function: cubic-bezier(.22, .61, .36, 1);
-}
-
-::view-transition-old(*),
-::view-transition-new(*) {
-  animation-duration: 420ms;
-  animation-timing-function: cubic-bezier(.22, .61, .36, 1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none;
-  }
-}
-
-/* Firefox fallback: animate the source and destination title separately. */
-@keyframes title-transition-leave {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: .15;
-    transform: translateY(-42vh);
-  }
-}
-
-@keyframes title-transition-enter {
-  from {
-    opacity: .15;
-    transform: translateY(42px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.title-transition-leave {
-  animation: title-transition-leave 420ms cubic-bezier(.22, .61, .36, 1) forwards;
-}
-
-.title-transition-enter {
-  animation: title-transition-enter 420ms cubic-bezier(.22, .61, .36, 1) both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .title-transition-leave,
-  .title-transition-enter {
-    animation: none;
-  }
 }
 
 .about-card h2,

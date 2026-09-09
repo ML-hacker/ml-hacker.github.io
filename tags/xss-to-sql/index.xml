@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Xss-to-Sql - Tag - Delete&#39;s blog</title>
-        <link>http://localhost:51699/tags/xss-to-sql/</link>
+        <link>http://localhost:1313/tags/xss-to-sql/</link>
         <description>Xss-to-Sql - Tag - Delete&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:15:07 &#43;0800</lastBuildDate><atom:link href="http://localhost:51699/tags/xss-to-sql/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:15:07 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/xss-to-sql/" rel="self" type="application/rss+xml" /><item>
     <title>ASIS-CTF-2025复现</title>
-    <link>http://localhost:51699/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</link>
+    <link>http://localhost:1313/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</link>
     <pubDate>Thu, 25 Sep 2025 00:15:07 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</guid>
+    <guid>http://localhost:1313/posts/asis-ctf-2025%E5%A4%8D%E7%8E%B0/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

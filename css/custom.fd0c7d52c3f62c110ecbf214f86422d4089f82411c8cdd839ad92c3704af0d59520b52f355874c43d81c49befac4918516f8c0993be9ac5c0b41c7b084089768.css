@@ -90,8 +90,7 @@ body[theme="dark"] #header-desktop {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  width: 100%;
-  max-width: 768px;
+  width: min(100%, 768px);
   min-height: 4.5rem;
   margin: 0 auto;
   padding: 1.25rem 1rem;

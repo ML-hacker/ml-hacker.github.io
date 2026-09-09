@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Sanitizer - Tag - Delete&#39;s blog</title>
-        <link>http://localhost:51699/tags/sanitizer/</link>
+        <link>http://localhost:1313/tags/sanitizer/</link>
         <description>Sanitizer - Tag - Delete&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Fri, 22 Aug 2025 00:59:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:51699/tags/sanitizer/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Fri, 22 Aug 2025 00:59:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/sanitizer/" rel="self" type="application/rss+xml" /><item>
     <title>探索前端安全-XSS(二)</title>
-    <link>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/</link>
+    <link>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/</link>
     <pubDate>Fri, 22 Aug 2025 00:59:15 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:51699/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/</guid>
+    <guid>http://localhost:1313/posts/%E6%8E%A2%E7%B4%A2xss%E5%AE%89%E5%85%A8day%E4%BA%8C/</guid>
     <description><![CDATA[<p>首发于奇安信攻防社区：https://forum.butian.net/share/4535</p>]]></description>
 </item>
 </channel>
