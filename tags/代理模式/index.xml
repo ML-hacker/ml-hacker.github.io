@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>代理模式 - Tag - Delete&#39;s blog</title>
+        <link>http://localhost:1313/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+        <description>代理模式 - Tag - Delete&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Tue, 14 May 2024 16:27:06 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>JAVA代理模式</title>
+    <link>http://localhost:1313/posts/java%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Tue, 14 May 2024 16:27:06 &#43;0800</pubDate>
+    <author>delete.golang@gmail.com (Delete)</author>
+    <guid>http://localhost:1313/posts/java%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

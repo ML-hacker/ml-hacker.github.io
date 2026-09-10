@@ -20,5 +20,13 @@
     <guid>http://localhost:1313/posts/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-hash%E9%95%BF%E5%BA%A6%E6%8B%93%E5%B1%95%E6%94%BB%E5%87%BB/</guid>
     <description><![CDATA[]]></description>
 </item>
+<item>
+    <title>find之漏洞探索-sql到rce</title>
+    <link>http://localhost:1313/posts/sql-rce/</link>
+    <pubDate>Fri, 02 Feb 2024 15:15:50 &#43;0800</pubDate>
+    <author>delete.golang@gmail.com (Delete)</author>
+    <guid>http://localhost:1313/posts/sql-rce/</guid>
+    <description><![CDATA[]]></description>
+</item>
 </channel>
 </rss>

@@ -45,6 +45,14 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
+    <title>Cyber Apocalypse CTF 2025 部分web wp</title>
+    <link>http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/</link>
+    <pubDate>Fri, 28 Mar 2025 00:18:17 &#43;0800</pubDate>
+    <author>delete.golang@gmail.com (Delete)</author>
+    <guid>http://localhost:1313/posts/cyber-apocalypse-ctf-2025-web/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>云镜-Initial</title>
     <link>http://localhost:1313/posts/initial/</link>
     <pubDate>Tue, 18 Mar 2025 00:02:15 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <pubDate>Thu, 25 Jan 2024 22:14:21 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
     <guid>http://localhost:1313/posts/ctfshow-yuandan/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Knightctf 2024 WP</title>
-    <link>http://localhost:1313/posts/knightctf2024/</link>
-    <pubDate>Mon, 22 Jan 2024 17:38:41 &#43;0800</pubDate>
-    <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/knightctf2024/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
