@@ -2,446 +2,446 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Delete&#39;s blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://ml-hacker.github.io/tags/</link>
     <description>Recent content in Tags on Delete&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
     <webMaster>delete.golang@gmail.com (Delete)</webMaster>
     <lastBuildDate>Tue, 08 Sep 2026 19:45:11 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ml-hacker.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Agent</title>
-      <link>http://localhost:1313/tags/ai-agent/</link>
+      <link>https://ml-hacker.github.io/tags/ai-agent/</link>
       <pubDate>Tue, 08 Sep 2026 19:45:11 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/ai-agent/</guid>
+      <guid>https://ml-hacker.github.io/tags/ai-agent/</guid>
       <description></description>
     </item>
     <item>
       <title>Hallucination</title>
-      <link>http://localhost:1313/tags/hallucination/</link>
+      <link>https://ml-hacker.github.io/tags/hallucination/</link>
       <pubDate>Tue, 08 Sep 2026 19:45:11 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/hallucination/</guid>
+      <guid>https://ml-hacker.github.io/tags/hallucination/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugging Face</title>
-      <link>http://localhost:1313/tags/hugging-face/</link>
+      <link>https://ml-hacker.github.io/tags/hugging-face/</link>
       <pubDate>Tue, 08 Sep 2026 19:45:11 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/hugging-face/</guid>
+      <guid>https://ml-hacker.github.io/tags/hugging-face/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://ml-hacker.github.io/tags/python/</link>
       <pubDate>Tue, 08 Sep 2026 19:45:11 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://ml-hacker.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>ReAct</title>
-      <link>http://localhost:1313/tags/react/</link>
+      <link>https://ml-hacker.github.io/tags/react/</link>
       <pubDate>Tue, 08 Sep 2026 19:45:11 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/react/</guid>
+      <guid>https://ml-hacker.github.io/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Tool Calling</title>
-      <link>http://localhost:1313/tags/tool-calling/</link>
+      <link>https://ml-hacker.github.io/tags/tool-calling/</link>
       <pubDate>Tue, 08 Sep 2026 19:45:11 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/tool-calling/</guid>
+      <guid>https://ml-hacker.github.io/tags/tool-calling/</guid>
       <description></description>
     </item>
     <item>
       <title>LLM</title>
-      <link>http://localhost:1313/tags/llm/</link>
+      <link>https://ml-hacker.github.io/tags/llm/</link>
       <pubDate>Mon, 07 Sep 2026 15:52:02 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <guid>https://ml-hacker.github.io/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Prompt</title>
-      <link>http://localhost:1313/tags/prompt/</link>
+      <link>https://ml-hacker.github.io/tags/prompt/</link>
       <pubDate>Mon, 07 Sep 2026 15:52:02 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/prompt/</guid>
+      <guid>https://ml-hacker.github.io/tags/prompt/</guid>
       <description></description>
     </item>
     <item>
       <title>Transformer</title>
-      <link>http://localhost:1313/tags/transformer/</link>
+      <link>https://ml-hacker.github.io/tags/transformer/</link>
       <pubDate>Mon, 07 Sep 2026 15:52:02 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/transformer/</guid>
+      <guid>https://ml-hacker.github.io/tags/transformer/</guid>
       <description></description>
     </item>
     <item>
       <title>Memory</title>
-      <link>http://localhost:1313/tags/memory/</link>
+      <link>https://ml-hacker.github.io/tags/memory/</link>
       <pubDate>Sat, 05 Sep 2026 15:01:27 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/memory/</guid>
+      <guid>https://ml-hacker.github.io/tags/memory/</guid>
       <description></description>
     </item>
     <item>
       <title>RAG</title>
-      <link>http://localhost:1313/tags/rag/</link>
+      <link>https://ml-hacker.github.io/tags/rag/</link>
       <pubDate>Sat, 05 Sep 2026 15:01:27 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/rag/</guid>
+      <guid>https://ml-hacker.github.io/tags/rag/</guid>
       <description></description>
     </item>
     <item>
       <title>Reflection</title>
-      <link>http://localhost:1313/tags/reflection/</link>
+      <link>https://ml-hacker.github.io/tags/reflection/</link>
       <pubDate>Sat, 05 Sep 2026 15:01:27 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/reflection/</guid>
+      <guid>https://ml-hacker.github.io/tags/reflection/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>https://ml-hacker.github.io/tags/tools/</link>
       <pubDate>Sat, 05 Sep 2026 15:01:27 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>https://ml-hacker.github.io/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Workflow</title>
-      <link>http://localhost:1313/tags/workflow/</link>
+      <link>https://ml-hacker.github.io/tags/workflow/</link>
       <pubDate>Sat, 05 Sep 2026 15:01:27 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/workflow/</guid>
+      <guid>https://ml-hacker.github.io/tags/workflow/</guid>
       <description></description>
     </item>
     <item>
       <title>FrankenPHP</title>
-      <link>http://localhost:1313/tags/frankenphp/</link>
+      <link>https://ml-hacker.github.io/tags/frankenphp/</link>
       <pubDate>Wed, 24 Dec 2025 13:28:55 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/frankenphp/</guid>
+      <guid>https://ml-hacker.github.io/tags/frankenphp/</guid>
       <description></description>
     </item>
     <item>
       <title>Prase_pro</title>
-      <link>http://localhost:1313/tags/prase_pro/</link>
+      <link>https://ml-hacker.github.io/tags/prase_pro/</link>
       <pubDate>Wed, 24 Dec 2025 13:28:55 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/prase_pro/</guid>
+      <guid>https://ml-hacker.github.io/tags/prase_pro/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
+      <link>https://ml-hacker.github.io/tags/sql/</link>
       <pubDate>Wed, 24 Dec 2025 13:28:55 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <guid>https://ml-hacker.github.io/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>DOM-Clobbering</title>
-      <link>http://localhost:1313/tags/dom-clobbering/</link>
+      <link>https://ml-hacker.github.io/tags/dom-clobbering/</link>
       <pubDate>Thu, 25 Sep 2025 00:15:07 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/dom-clobbering/</guid>
+      <guid>https://ml-hacker.github.io/tags/dom-clobbering/</guid>
       <description></description>
     </item>
     <item>
       <title>DOM破坏</title>
-      <link>http://localhost:1313/tags/dom%E7%A0%B4%E5%9D%8F/</link>
+      <link>https://ml-hacker.github.io/tags/dom%E7%A0%B4%E5%9D%8F/</link>
       <pubDate>Thu, 25 Sep 2025 00:15:07 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/dom%E7%A0%B4%E5%9D%8F/</guid>
+      <guid>https://ml-hacker.github.io/tags/dom%E7%A0%B4%E5%9D%8F/</guid>
       <description></description>
     </item>
     <item>
-      <title>XSS</title>
-      <link>http://localhost:1313/tags/xss/</link>
+      <title>Xss</title>
+      <link>https://ml-hacker.github.io/tags/xss/</link>
       <pubDate>Thu, 25 Sep 2025 00:15:07 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/xss/</guid>
+      <guid>https://ml-hacker.github.io/tags/xss/</guid>
       <description></description>
     </item>
     <item>
       <title>Xss-to-Sql</title>
-      <link>http://localhost:1313/tags/xss-to-sql/</link>
+      <link>https://ml-hacker.github.io/tags/xss-to-sql/</link>
       <pubDate>Thu, 25 Sep 2025 00:15:07 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/xss-to-sql/</guid>
+      <guid>https://ml-hacker.github.io/tags/xss-to-sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Iframe</title>
-      <link>http://localhost:1313/tags/iframe/</link>
+      <link>https://ml-hacker.github.io/tags/iframe/</link>
       <pubDate>Tue, 16 Sep 2025 20:24:49 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/iframe/</guid>
+      <guid>https://ml-hacker.github.io/tags/iframe/</guid>
       <description></description>
     </item>
     <item>
       <title>复现</title>
-      <link>http://localhost:1313/tags/%E5%A4%8D%E7%8E%B0/</link>
+      <link>https://ml-hacker.github.io/tags/%E5%A4%8D%E7%8E%B0/</link>
       <pubDate>Tue, 16 Sep 2025 20:24:49 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/%E5%A4%8D%E7%8E%B0/</guid>
+      <guid>https://ml-hacker.github.io/tags/%E5%A4%8D%E7%8E%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>Oracle</title>
-      <link>http://localhost:1313/tags/oracle/</link>
+      <link>https://ml-hacker.github.io/tags/oracle/</link>
       <pubDate>Thu, 11 Sep 2025 23:41:01 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/oracle/</guid>
+      <guid>https://ml-hacker.github.io/tags/oracle/</guid>
       <description></description>
     </item>
     <item>
       <title>XSLeasks</title>
-      <link>http://localhost:1313/tags/xsleasks/</link>
+      <link>https://ml-hacker.github.io/tags/xsleasks/</link>
       <pubDate>Thu, 11 Sep 2025 23:41:01 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/xsleasks/</guid>
+      <guid>https://ml-hacker.github.io/tags/xsleasks/</guid>
       <description></description>
     </item>
     <item>
       <title>CSS Inject</title>
-      <link>http://localhost:1313/tags/css-inject/</link>
+      <link>https://ml-hacker.github.io/tags/css-inject/</link>
       <pubDate>Sat, 30 Aug 2025 23:17:54 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/css-inject/</guid>
+      <guid>https://ml-hacker.github.io/tags/css-inject/</guid>
       <description></description>
     </item>
     <item>
       <title>Leak</title>
-      <link>http://localhost:1313/tags/leak/</link>
+      <link>https://ml-hacker.github.io/tags/leak/</link>
       <pubDate>Sat, 30 Aug 2025 23:17:54 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/leak/</guid>
+      <guid>https://ml-hacker.github.io/tags/leak/</guid>
       <description></description>
     </item>
     <item>
       <title>Scrollbar</title>
-      <link>http://localhost:1313/tags/scrollbar/</link>
+      <link>https://ml-hacker.github.io/tags/scrollbar/</link>
       <pubDate>Sat, 30 Aug 2025 23:17:54 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/scrollbar/</guid>
+      <guid>https://ml-hacker.github.io/tags/scrollbar/</guid>
       <description></description>
     </item>
     <item>
       <title>CSTI</title>
-      <link>http://localhost:1313/tags/csti/</link>
+      <link>https://ml-hacker.github.io/tags/csti/</link>
       <pubDate>Sat, 30 Aug 2025 23:17:41 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/csti/</guid>
+      <guid>https://ml-hacker.github.io/tags/csti/</guid>
       <description></description>
     </item>
     <item>
       <title>DOM</title>
-      <link>http://localhost:1313/tags/dom/</link>
+      <link>https://ml-hacker.github.io/tags/dom/</link>
       <pubDate>Thu, 28 Aug 2025 02:03:07 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/dom/</guid>
+      <guid>https://ml-hacker.github.io/tags/dom/</guid>
       <description></description>
     </item>
     <item>
       <title>CSP</title>
-      <link>http://localhost:1313/tags/csp/</link>
+      <link>https://ml-hacker.github.io/tags/csp/</link>
       <pubDate>Fri, 22 Aug 2025 00:59:15 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/csp/</guid>
+      <guid>https://ml-hacker.github.io/tags/csp/</guid>
       <description></description>
     </item>
     <item>
       <title>MXSS</title>
-      <link>http://localhost:1313/tags/mxss/</link>
+      <link>https://ml-hacker.github.io/tags/mxss/</link>
       <pubDate>Fri, 22 Aug 2025 00:59:15 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/mxss/</guid>
+      <guid>https://ml-hacker.github.io/tags/mxss/</guid>
       <description></description>
     </item>
     <item>
       <title>Sanitizer</title>
-      <link>http://localhost:1313/tags/sanitizer/</link>
+      <link>https://ml-hacker.github.io/tags/sanitizer/</link>
       <pubDate>Fri, 22 Aug 2025 00:59:15 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/sanitizer/</guid>
+      <guid>https://ml-hacker.github.io/tags/sanitizer/</guid>
       <description></description>
     </item>
     <item>
       <title>Race Conditon</title>
-      <link>http://localhost:1313/tags/race-conditon/</link>
+      <link>https://ml-hacker.github.io/tags/race-conditon/</link>
       <pubDate>Thu, 22 May 2025 00:36:52 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/race-conditon/</guid>
+      <guid>https://ml-hacker.github.io/tags/race-conditon/</guid>
       <description></description>
     </item>
     <item>
       <title>Sendmail</title>
-      <link>http://localhost:1313/tags/sendmail/</link>
+      <link>https://ml-hacker.github.io/tags/sendmail/</link>
       <pubDate>Thu, 22 May 2025 00:36:52 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/sendmail/</guid>
+      <guid>https://ml-hacker.github.io/tags/sendmail/</guid>
       <description></description>
     </item>
     <item>
       <title>Loader</title>
-      <link>http://localhost:1313/tags/loader/</link>
+      <link>https://ml-hacker.github.io/tags/loader/</link>
       <pubDate>Fri, 16 May 2025 12:09:35 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/loader/</guid>
+      <guid>https://ml-hacker.github.io/tags/loader/</guid>
       <description></description>
     </item>
     <item>
       <title>Include</title>
-      <link>http://localhost:1313/tags/include/</link>
+      <link>https://ml-hacker.github.io/tags/include/</link>
       <pubDate>Thu, 15 May 2025 19:33:17 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/include/</guid>
+      <guid>https://ml-hacker.github.io/tags/include/</guid>
       <description></description>
     </item>
     <item>
       <title>WEB</title>
-      <link>http://localhost:1313/tags/web/</link>
+      <link>https://ml-hacker.github.io/tags/web/</link>
       <pubDate>Thu, 15 May 2025 19:33:17 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/web/</guid>
+      <guid>https://ml-hacker.github.io/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>Prototype Pollution</title>
-      <link>http://localhost:1313/tags/prototype-pollution/</link>
+      <link>https://ml-hacker.github.io/tags/prototype-pollution/</link>
       <pubDate>Tue, 25 Mar 2025 13:50:22 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/prototype-pollution/</guid>
+      <guid>https://ml-hacker.github.io/tags/prototype-pollution/</guid>
       <description></description>
     </item>
     <item>
       <title>SSTI</title>
-      <link>http://localhost:1313/tags/ssti/</link>
+      <link>https://ml-hacker.github.io/tags/ssti/</link>
       <pubDate>Tue, 25 Mar 2025 13:50:22 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/ssti/</guid>
+      <guid>https://ml-hacker.github.io/tags/ssti/</guid>
       <description></description>
     </item>
     <item>
       <title>DCSync</title>
-      <link>http://localhost:1313/tags/dcsync/</link>
+      <link>https://ml-hacker.github.io/tags/dcsync/</link>
       <pubDate>Thu, 20 Mar 2025 16:41:40 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/dcsync/</guid>
+      <guid>https://ml-hacker.github.io/tags/dcsync/</guid>
       <description></description>
     </item>
     <item>
       <title>Initial</title>
-      <link>http://localhost:1313/tags/initial/</link>
+      <link>https://ml-hacker.github.io/tags/initial/</link>
       <pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/initial/</guid>
+      <guid>https://ml-hacker.github.io/tags/initial/</guid>
       <description></description>
     </item>
     <item>
       <title>PTH</title>
-      <link>http://localhost:1313/tags/pth/</link>
+      <link>https://ml-hacker.github.io/tags/pth/</link>
       <pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/pth/</guid>
+      <guid>https://ml-hacker.github.io/tags/pth/</guid>
       <description></description>
     </item>
     <item>
       <title>Sudo提权</title>
-      <link>http://localhost:1313/tags/sudo%E6%8F%90%E6%9D%83/</link>
+      <link>https://ml-hacker.github.io/tags/sudo%E6%8F%90%E6%9D%83/</link>
       <pubDate>Tue, 18 Mar 2025 00:02:15 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/sudo%E6%8F%90%E6%9D%83/</guid>
+      <guid>https://ml-hacker.github.io/tags/sudo%E6%8F%90%E6%9D%83/</guid>
       <description></description>
     </item>
     <item>
       <title>Ast</title>
-      <link>http://localhost:1313/tags/ast/</link>
+      <link>https://ml-hacker.github.io/tags/ast/</link>
       <pubDate>Mon, 10 Mar 2025 10:49:20 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/ast/</guid>
+      <guid>https://ml-hacker.github.io/tags/ast/</guid>
       <description></description>
     </item>
     <item>
       <title>Shadow Dom</title>
-      <link>http://localhost:1313/tags/shadow-dom/</link>
+      <link>https://ml-hacker.github.io/tags/shadow-dom/</link>
       <pubDate>Mon, 10 Mar 2025 10:49:20 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/shadow-dom/</guid>
+      <guid>https://ml-hacker.github.io/tags/shadow-dom/</guid>
       <description></description>
     </item>
     <item>
       <title>Upzip</title>
-      <link>http://localhost:1313/tags/upzip/</link>
+      <link>https://ml-hacker.github.io/tags/upzip/</link>
       <pubDate>Mon, 10 Mar 2025 10:49:20 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/upzip/</guid>
+      <guid>https://ml-hacker.github.io/tags/upzip/</guid>
       <description></description>
     </item>
     <item>
       <title>Filterchain</title>
-      <link>http://localhost:1313/tags/filterchain/</link>
+      <link>https://ml-hacker.github.io/tags/filterchain/</link>
       <pubDate>Thu, 25 Jul 2024 21:25:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/filterchain/</guid>
+      <guid>https://ml-hacker.github.io/tags/filterchain/</guid>
       <description></description>
     </item>
     <item>
       <title>WP</title>
-      <link>http://localhost:1313/tags/wp/</link>
+      <link>https://ml-hacker.github.io/tags/wp/</link>
       <pubDate>Mon, 22 Jul 2024 00:26:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/wp/</guid>
+      <guid>https://ml-hacker.github.io/tags/wp/</guid>
       <description></description>
     </item>
     <item>
       <title>ROP</title>
-      <link>http://localhost:1313/tags/rop/</link>
+      <link>https://ml-hacker.github.io/tags/rop/</link>
       <pubDate>Fri, 12 Jul 2024 14:38:20 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/rop/</guid>
+      <guid>https://ml-hacker.github.io/tags/rop/</guid>
       <description></description>
     </item>
     <item>
       <title>Nodejs</title>
-      <link>http://localhost:1313/tags/nodejs/</link>
+      <link>https://ml-hacker.github.io/tags/nodejs/</link>
       <pubDate>Sun, 07 Jul 2024 22:55:20 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/nodejs/</guid>
+      <guid>https://ml-hacker.github.io/tags/nodejs/</guid>
       <description></description>
     </item>
     <item>
       <title>BashFuck</title>
-      <link>http://localhost:1313/tags/bashfuck/</link>
+      <link>https://ml-hacker.github.io/tags/bashfuck/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/bashfuck/</guid>
+      <guid>https://ml-hacker.github.io/tags/bashfuck/</guid>
       <description></description>
     </item>
     <item>
       <title>Bypass</title>
-      <link>http://localhost:1313/tags/bypass/</link>
+      <link>https://ml-hacker.github.io/tags/bypass/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/bypass/</guid>
+      <guid>https://ml-hacker.github.io/tags/bypass/</guid>
       <description></description>
     </item>
     <item>
       <title>Hash</title>
-      <link>http://localhost:1313/tags/hash/</link>
+      <link>https://ml-hacker.github.io/tags/hash/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/hash/</guid>
+      <guid>https://ml-hacker.github.io/tags/hash/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://ml-hacker.github.io/tags/linux/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://ml-hacker.github.io/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>PHP</title>
-      <link>http://localhost:1313/tags/php/</link>
+      <link>https://ml-hacker.github.io/tags/php/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/php/</guid>
+      <guid>https://ml-hacker.github.io/tags/php/</guid>
       <description></description>
     </item>
     <item>
       <title>RCE</title>
-      <link>http://localhost:1313/tags/rce/</link>
+      <link>https://ml-hacker.github.io/tags/rce/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/rce/</guid>
+      <guid>https://ml-hacker.github.io/tags/rce/</guid>
       <description></description>
     </item>
     <item>
       <title>文件包含</title>
-      <link>http://localhost:1313/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</link>
+      <link>https://ml-hacker.github.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</link>
       <pubDate>Sun, 14 Apr 2024 14:34:26 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</guid>
+      <guid>https://ml-hacker.github.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>环境变量注入</title>
-      <link>http://localhost:1313/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%B3%A8%E5%85%A5/</link>
+      <link>https://ml-hacker.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Wed, 21 Feb 2024 20:53:41 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%B3%A8%E5%85%A5/</guid>
+      <guid>https://ml-hacker.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%B3%A8%E5%85%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>NOSQL</title>
-      <link>http://localhost:1313/tags/nosql/</link>
+      <link>https://ml-hacker.github.io/tags/nosql/</link>
       <pubDate>Thu, 01 Feb 2024 23:27:59 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/nosql/</guid>
+      <guid>https://ml-hacker.github.io/tags/nosql/</guid>
       <description></description>
     </item>
     <item>
       <title>反序列化</title>
-      <link>http://localhost:1313/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <link>https://ml-hacker.github.io/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
       <pubDate>Wed, 17 Jan 2024 18:32:32 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <guid>https://ml-hacker.github.io/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
       <description></description>
     </item>
     <item>
       <title>Udf</title>
-      <link>http://localhost:1313/tags/udf/</link>
+      <link>https://ml-hacker.github.io/tags/udf/</link>
       <pubDate>Wed, 13 Sep 2023 16:28:55 +0800</pubDate><author>delete.golang@gmail.com (Delete)</author>
-      <guid>http://localhost:1313/tags/udf/</guid>
+      <guid>https://ml-hacker.github.io/tags/udf/</guid>
       <description></description>
     </item>
   </channel>

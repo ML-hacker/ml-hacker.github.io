@@ -1,63 +1,63 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>WP - Tag - Delete&#39;s blog</title>
-        <link>http://localhost:1313/tags/wp/</link>
+        <link>https://ml-hacker.github.io/tags/wp/</link>
         <description>WP - Tag - Delete&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Mon, 22 Jul 2024 00:26:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/wp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Mon, 22 Jul 2024 00:26:26 &#43;0800</lastBuildDate><atom:link href="https://ml-hacker.github.io/tags/wp/" rel="self" type="application/rss+xml" /><item>
     <title>HITCON CTF 2024 web复现</title>
-    <link>http://localhost:1313/posts/hitcon2024/</link>
+    <link>https://ml-hacker.github.io/posts/hitcon2024/</link>
     <pubDate>Mon, 22 Jul 2024 00:26:26 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/hitcon2024/</guid>
+    <guid>https://ml-hacker.github.io/posts/hitcon2024/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>CTFshow元旦水友赛部分wp-web</title>
-    <link>http://localhost:1313/posts/ctfshow-yuandan/</link>
+    <link>https://ml-hacker.github.io/posts/ctfshow-yuandan/</link>
     <pubDate>Thu, 25 Jan 2024 22:14:21 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/ctfshow-yuandan/</guid>
+    <guid>https://ml-hacker.github.io/posts/ctfshow-yuandan/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Knightctf 2024 WP</title>
-    <link>http://localhost:1313/posts/knightctf2024/</link>
+    <link>https://ml-hacker.github.io/posts/knightctf2024/</link>
     <pubDate>Mon, 22 Jan 2024 17:38:41 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/knightctf2024/</guid>
+    <guid>https://ml-hacker.github.io/posts/knightctf2024/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>n1ctf-ezmaira</title>
-    <link>http://localhost:1313/posts/n1ctf-ezmaira/</link>
+    <link>https://ml-hacker.github.io/posts/n1ctf-ezmaira/</link>
     <pubDate>Fri, 03 Nov 2023 13:19:58 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/n1ctf-ezmaira/</guid>
+    <guid>https://ml-hacker.github.io/posts/n1ctf-ezmaira/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ACTF2023 WP</title>
-    <link>http://localhost:1313/posts/actf/</link>
+    <link>https://ml-hacker.github.io/posts/actf/</link>
     <pubDate>Tue, 31 Oct 2023 14:34:26 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/actf/</guid>
+    <guid>https://ml-hacker.github.io/posts/actf/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>天山固网线上赛WP</title>
-    <link>http://localhost:1313/posts/%E5%A4%A9%E5%B1%B1/</link>
+    <link>https://ml-hacker.github.io/posts/%E5%A4%A9%E5%B1%B1/</link>
     <pubDate>Sat, 21 Oct 2023 21:55:20 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/%E5%A4%A9%E5%B1%B1/</guid>
+    <guid>https://ml-hacker.github.io/posts/%E5%A4%A9%E5%B1%B1/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>SICTFround2 wp</title>
-    <link>http://localhost:1313/posts/sictf/</link>
+    <link>https://ml-hacker.github.io/posts/sictf/</link>
     <pubDate>Mon, 06 Feb 2023 14:36:17 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/sictf/</guid>
+    <guid>https://ml-hacker.github.io/posts/sictf/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

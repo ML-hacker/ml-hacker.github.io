@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>LLM - Tag - Delete&#39;s blog</title>
-        <link>http://localhost:1313/tags/llm/</link>
+        <link>https://ml-hacker.github.io/tags/llm/</link>
         <description>LLM - Tag - Delete&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>delete.golang@gmail.com (Delete)</managingEditor>
-            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Mon, 07 Sep 2026 15:52:02 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/llm/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>delete.golang@gmail.com (Delete)</webMaster><lastBuildDate>Mon, 07 Sep 2026 15:52:02 &#43;0800</lastBuildDate><atom:link href="https://ml-hacker.github.io/tags/llm/" rel="self" type="application/rss+xml" /><item>
     <title>Hugging Face Agent Course（一）：LLM、消息与工具</title>
-    <link>http://localhost:1313/posts/hugging-face-agent-course-1/</link>
+    <link>https://ml-hacker.github.io/posts/hugging-face-agent-course-1/</link>
     <pubDate>Mon, 07 Sep 2026 15:52:02 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/hugging-face-agent-course-1/</guid>
+    <guid>https://ml-hacker.github.io/posts/hugging-face-agent-course-1/</guid>
     <description><![CDATA[从 Hugging Face Agent Course 的基础内容出发，记录 LLM、消息格式、解码策略、Chat Template 与工具调用。]]></description>
 </item>
 <item>
     <title>AI Agent 基础概念与工作流</title>
-    <link>http://localhost:1313/posts/ai-agent-basics/</link>
+    <link>https://ml-hacker.github.io/posts/ai-agent-basics/</link>
     <pubDate>Sat, 05 Sep 2026 15:01:27 &#43;0800</pubDate>
     <author>delete.golang@gmail.com (Delete)</author>
-    <guid>http://localhost:1313/posts/ai-agent-basics/</guid>
+    <guid>https://ml-hacker.github.io/posts/ai-agent-basics/</guid>
     <description><![CDATA[整理 AI Agent 的核心组成、工作流模式、工具调用、反思机制与 Agentic RAG。]]></description>
 </item>
 </channel>
